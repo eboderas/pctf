@@ -2,7 +2,7 @@
 ## Connor Nelson, 2017 ##
 #########################
 
-# Redirect outgoing game network packets to alter_flags network (172 --> 127):
+# Redirect outgoing game network packets to alter_flags network (172 --> 10):
 # iptables -t nat -A OUTPUT -d 172.31.129.0/24 -j NETMAP --to 10.31.129.0/24
 
 # Create virtual interface for alter_flags network
@@ -40,7 +40,7 @@ def alter_flags(packet):
     sendrecv.send(packet[IP])
 
 def main():
-    sendrecv.sniff(iface = 'alter_flags'
+    sendrecv.sniff(iface = 'alter_flags',
                    lfilter = lambda p: IP in p and '10.31.129' in p[IP].dst,
                    prn = alter_flags)
 
