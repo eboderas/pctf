@@ -17,3 +17,4 @@ Current and planned list of scripts:
 Frameworks:
 + [angr](http://angr.io/) python framework for analyzing binaries
 + [pwntools](https://github.com/Gallopsled/pwntools#readme) CTF framework and exploit development library
++ [reverse shell](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet) cheat sheet for possible command execution vulns
