@@ -26,3 +26,4 @@ python get_ssh.py -t 35.161.233.76 -u team1@example.com -p password
 * [pwntools](https://github.com/Gallopsled/pwntools#readme) CTF framework and exploit development library
 * [scapy](https://github.com/secdev/scapy#readme) python framework for capturing and manipulating packets
 * [reverse shell](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet) cheat sheet for possible command execution vulns
+* [pypy](https://pypy.org/) python optimized for speed
