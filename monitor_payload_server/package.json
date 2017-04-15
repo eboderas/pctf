@@ -1,0 +1,37 @@
+{
+  "name": "monitor_payload_server",
+  "version": "1.0.0",
+  "description": "yada",
+  "main": "server.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha",
+    "express": "node server.js --port=9001"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+git@github.com:eboderas/pctf.git"
+  },
+  "keywords": [
+    "server"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eboderas/pctf/issues"
+  },
+  "homepage": "https://github.com/eboderas/pctf/blob/master/README.md",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.3",
+    "express": "^4.15.2",
+    "pg": "^6.1.5",
+    "querystring": "^0.2.0",
+    "yargs": "^7.0.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "lodash": "^4.17.4",
+    "mocha": "^3.2.0",
+    "pg-parse-float": "0.0.1"
+  }
+}
