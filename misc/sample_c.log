@@ -1,0 +1,2439 @@
+
+[11:42:51] Loading exploit...
+
+[11:42:51] Connecting to iCTF...
+
+[11:42:52] Found exploit service: sample_c [10001] @ port 20001
+
+[11:42:52] Connecting to root through ssh...
+[x] Connecting to 34.223.241.147 on port 1338
+[+] Connecting to 34.223.241.147 on port 1338: Done
+[*] root@34.223.241.147:
+    Distro    Ubuntu 14.04
+    OS:       linux
+    Arch:     amd64
+    Version:  3.13.0
+    ASLR:     Enabled
+
+[11:43:01] Starting tick manager...
+
+[11:43:01] Starting flag submission manager...
+
+[11:43:01] Starting to exploit service
+
+[11:43:31] Exploiting host team1 for flag_id 3164058777
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[11:43:31] Retrieved flag from host team1 for flag_id 3164058777: FLG74Iq1vTK9caiE
+
+[11:43:54] Submitted 1 flags:
+['FLG74Iq1vTK9caiE']
+Response:
+[u'correct']
+
+[11:44:49] Exploiting host team1 for flag_id 1176050362
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[11:44:49] Retrieved flag from host team1 for flag_id 1176050362: FLGYIaXtxmNyt6Gb
+
+[11:47:24] Submitted 1 flags:
+['FLGYIaXtxmNyt6Gb']
+Response:
+[u'correct']
+
+[11:48:20] Exploiting host team1 for flag_id 1680395535
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[11:48:20] Retrieved flag from host team1 for flag_id 1680395535: FLGm473GtrDUBOzX
+
+[11:50:49] Submitted 1 flags:
+['FLGm473GtrDUBOzX']
+Response:
+[u'correct']
+
+[11:51:44] Exploiting host team1 for flag_id 4001061229
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[11:51:44] Retrieved flag from host team1 for flag_id 4001061229: FLGd7HQgal6imPOM
+
+[11:54:16] Submitted 1 flags:
+['FLGd7HQgal6imPOM']
+Response:
+[u'correct']
+
+[11:55:11] Exploiting host team1 for flag_id 750639934
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[11:55:11] Retrieved flag from host team1 for flag_id 750639934: FLG1n1yYManSnMeO
+
+[11:57:38] Submitted 1 flags:
+['FLG1n1yYManSnMeO']
+Response:
+[u'correct']
+
+[11:58:34] Exploiting host team1 for flag_id 1267807530
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[11:58:34] Retrieved flag from host team1 for flag_id 1267807530: FLGzEEeN5xKIanBy
+
+[12:00:39] Submitted 1 flags:
+['FLGzEEeN5xKIanBy']
+Response:
+[u'correct']
+
+[12:01:34] Exploiting host team1 for flag_id 3292996739
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[12:01:35] Retrieved flag from host team1 for flag_id 3292996739: FLGiUSYMqOj8GMeR
+
+[12:04:27] Submitted 1 flags:
+['FLGiUSYMqOj8GMeR']
+Response:
+[u'correct']
+
+[12:05:22] Exploiting host team1 for flag_id 3181645849
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[12:05:22] Retrieved flag from host team1 for flag_id 3181645849: FLGBKbrl8TCFNWfo
+
+[12:07:24] Submitted 1 flags:
+['FLGBKbrl8TCFNWfo']
+Response:
+[u'correct']
+
+[12:08:20] Exploiting host team1 for flag_id 3666356412
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[12:08:21] Retrieved flag from host team1 for flag_id 3666356412: FLGsZjYhXYGlcXqA
+
+[12:10:36] Submitted 1 flags:
+['FLGsZjYhXYGlcXqA']
+Response:
+[u'correct']
+
+[12:11:31] Exploiting host team1 for flag_id 3138729361
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[12:11:31] Retrieved flag from host team1 for flag_id 3138729361: FLGlxifMRCbrrMwc
+
+[12:13:40] Submitted 1 flags:
+['FLGlxifMRCbrrMwc']
+Response:
+[u'correct']
+
+[12:14:35] Exploiting host team1 for flag_id 2305490940
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[12:14:36] Retrieved flag from host team1 for flag_id 2305490940: FLGxYrAVcFbskf9G
+
+[12:16:44] Submitted 1 flags:
+['FLGxYrAVcFbskf9G']
+Response:
+[u'correct']
+
+[12:17:39] Exploiting host team1 for flag_id 1881465645
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[12:17:39] Retrieved flag from host team1 for flag_id 1881465645: FLG5vHu62yhxvJrb
+
+[12:20:03] Submitted 1 flags:
+['FLG5vHu62yhxvJrb']
+Response:
+[u'correct']
+
+[12:20:58] Exploiting host team1 for flag_id 2038465503
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[12:20:58] Retrieved flag from host team1 for flag_id 2038465503: FLG3Bn5W0s9dQ6br
+
+[12:23:05] Submitted 1 flags:
+['FLG3Bn5W0s9dQ6br']
+Response:
+[u'correct']
+
+[12:24:00] Exploiting host team1 for flag_id 2150548125
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[12:24:00] Retrieved flag from host team1 for flag_id 2150548125: FLG97i4dcIC7OCcp
+
+[12:26:54] Submitted 1 flags:
+['FLG97i4dcIC7OCcp']
+Response:
+[u'correct']
+
+[12:27:49] Exploiting host team1 for flag_id 3896702363
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[12:27:49] Retrieved flag from host team1 for flag_id 3896702363: FLGmQovsNEEYGKQ3
+
+[12:29:58] Submitted 1 flags:
+['FLGmQovsNEEYGKQ3']
+Response:
+[u'correct']
+
+[12:30:53] Exploiting host team1 for flag_id 930421398
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[12:30:53] Retrieved flag from host team1 for flag_id 930421398: FLGcrgfCyJpbheX4
+
+[12:33:02] Submitted 1 flags:
+['FLGcrgfCyJpbheX4']
+Response:
+[u'correct']
+
+[12:33:57] Exploiting host team1 for flag_id 1191606447
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[12:33:57] Retrieved flag from host team1 for flag_id 1191606447: FLG8lVN1ZjfWZckx
+
+[12:36:31] Submitted 1 flags:
+['FLG8lVN1ZjfWZckx']
+Response:
+[u'correct']
+
+[12:37:26] Exploiting host team1 for flag_id 82423080
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[12:37:26] Retrieved flag from host team1 for flag_id 82423080: FLG0VuiV4c8KOMfw
+
+[12:39:37] Submitted 1 flags:
+['FLG0VuiV4c8KOMfw']
+Response:
+[u'correct']
+
+[12:40:32] Exploiting host team1 for flag_id 2061437067
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[12:40:32] Retrieved flag from host team1 for flag_id 2061437067: FLGAs8qDqOnTvkG9
+
+[12:43:16] Submitted 1 flags:
+['FLGAs8qDqOnTvkG9']
+Response:
+[u'correct']
+
+[12:44:11] Exploiting host team1 for flag_id 1332514676
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[12:44:11] Retrieved flag from host team1 for flag_id 1332514676: FLGOtPGyyZyBqWWO
+
+[12:46:35] Submitted 1 flags:
+['FLGOtPGyyZyBqWWO']
+Response:
+[u'correct']
+
+[12:47:30] Exploiting host team1 for flag_id 661504368
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[12:47:30] Retrieved flag from host team1 for flag_id 661504368: FLGvmkcVlNb0bwF7
+
+[12:49:37] Submitted 1 flags:
+['FLGvmkcVlNb0bwF7']
+Response:
+[u'correct']
+
+[12:50:32] Exploiting host team1 for flag_id 2075831612
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[12:50:32] Retrieved flag from host team1 for flag_id 2075831612: FLGYebKxkJgVie2X
+
+[12:53:16] Submitted 1 flags:
+['FLGYebKxkJgVie2X']
+Response:
+[u'correct']
+
+[12:54:11] Exploiting host team1 for flag_id 1203099131
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[12:54:11] Retrieved flag from host team1 for flag_id 1203099131: FLGENGaEnbaMuAzm
+
+[12:56:35] Submitted 1 flags:
+['FLGENGaEnbaMuAzm']
+Response:
+[u'correct']
+
+[12:57:30] Exploiting host team1 for flag_id 3959467251
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[12:57:30] Retrieved flag from host team1 for flag_id 3959467251: FLGtTneTnJPICoRT
+
+[13:00:21] Submitted 1 flags:
+['FLGtTneTnJPICoRT']
+Response:
+[u'correct']
+
+[13:01:16] Exploiting host team1 for flag_id 3461668367
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[13:01:16] Retrieved flag from host team1 for flag_id 3461668367: FLGP53uETI4rC8ZQ
+
+[13:03:29] Submitted 1 flags:
+['FLGP53uETI4rC8ZQ']
+Response:
+[u'correct']
+
+[13:04:24] Exploiting host team1 for flag_id 2758165175
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[13:04:25] Retrieved flag from host team1 for flag_id 2758165175: FLGqTyy5ysKvDhtm
+
+[13:06:45] Submitted 1 flags:
+['FLGqTyy5ysKvDhtm']
+Response:
+[u'correct']
+
+[13:07:40] Exploiting host team1 for flag_id 324395632
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[13:07:41] Retrieved flag from host team1 for flag_id 324395632: FLGAUeamQmvnlJ5a
+
+[13:10:06] Submitted 1 flags:
+['FLGAUeamQmvnlJ5a']
+Response:
+[u'correct']
+
+[13:11:01] Exploiting host team1 for flag_id 3508219952
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[13:11:01] Retrieved flag from host team1 for flag_id 3508219952: FLGIMYi6KnaTAt9H
+
+[13:13:28] Submitted 1 flags:
+['FLGIMYi6KnaTAt9H']
+Response:
+[u'correct']
+
+[13:14:23] Exploiting host team1 for flag_id 534717894
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[13:14:24] Retrieved flag from host team1 for flag_id 534717894: FLG0vtHy4gCyr29d
+
+[13:16:56] Submitted 1 flags:
+['FLG0vtHy4gCyr29d']
+Response:
+[u'correct']
+
+[13:17:51] Exploiting host team1 for flag_id 3355842422
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[13:17:52] Retrieved flag from host team1 for flag_id 3355842422: FLGmPRCVyyUtolO6
+
+[13:20:43] Submitted 1 flags:
+['FLGmPRCVyyUtolO6']
+Response:
+[u'correct']
+
+[13:21:38] Exploiting host team1 for flag_id 4267897695
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[13:21:39] Retrieved flag from host team1 for flag_id 4267897695: FLGJsl8rgUBDCvYQ
+
+[13:23:36] Submitted 1 flags:
+['FLGJsl8rgUBDCvYQ']
+Response:
+[u'correct']
+
+[13:24:31] Exploiting host team1 for flag_id 1060311916
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[13:24:31] Retrieved flag from host team1 for flag_id 1060311916: FLGtRinnTBmPvjQB
+
+[13:26:32] Submitted 1 flags:
+['FLGtRinnTBmPvjQB']
+Response:
+[u'correct']
+
+[13:27:27] Exploiting host team1 for flag_id 2387270548
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[13:27:27] Retrieved flag from host team1 for flag_id 2387270548: FLGZ8muOuwZcVP2v
+
+[13:29:38] Submitted 1 flags:
+['FLGZ8muOuwZcVP2v']
+Response:
+[u'correct']
+
+[13:30:33] Exploiting host team1 for flag_id 107712952
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[13:30:33] Retrieved flag from host team1 for flag_id 107712952: FLGcwRjmUJAJvNF5
+
+[13:32:36] Submitted 1 flags:
+['FLGcwRjmUJAJvNF5']
+Response:
+[u'correct']
+
+[13:33:31] Exploiting host team1 for flag_id 374413153
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[13:33:32] Retrieved flag from host team1 for flag_id 374413153: FLG0LiM7IZeGbgCI
+
+[13:35:42] Submitted 1 flags:
+['FLG0LiM7IZeGbgCI']
+Response:
+[u'correct']
+
+[13:36:37] Exploiting host team1 for flag_id 1319243153
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[13:36:38] Retrieved flag from host team1 for flag_id 1319243153: FLGQAMUWbLyeRSpJ
+
+[13:38:43] Submitted 1 flags:
+['FLGQAMUWbLyeRSpJ']
+Response:
+[u'correct']
+
+[13:39:39] Exploiting host team1 for flag_id 3913554967
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[13:39:39] Retrieved flag from host team1 for flag_id 3913554967: FLGUo2yTUjr9qPkI
+
+[13:41:53] Submitted 1 flags:
+['FLGUo2yTUjr9qPkI']
+Response:
+[u'correct']
+
+[13:42:48] Exploiting host team1 for flag_id 449149638
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[13:42:48] Retrieved flag from host team1 for flag_id 449149638: FLGjgAurNtVQVAFx
+
+[13:45:05] Submitted 1 flags:
+['FLGjgAurNtVQVAFx']
+Response:
+[u'correct']
+
+[13:46:01] Exploiting host team1 for flag_id 2331753973
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[13:46:01] Retrieved flag from host team1 for flag_id 2331753973: FLGMq2x2CTySGbkO
+
+[13:48:53] Submitted 1 flags:
+['FLGMq2x2CTySGbkO']
+Response:
+[u'correct']
+
+[13:49:48] Exploiting host team1 for flag_id 2130461399
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[13:49:48] Retrieved flag from host team1 for flag_id 2130461399: FLGN4qzBLjVrrwkw
+
+[13:52:17] Submitted 1 flags:
+['FLGN4qzBLjVrrwkw']
+Response:
+[u'correct']
+
+[13:53:13] Exploiting host team1 for flag_id 3926646242
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[13:53:16] Retrieved flag from host team1 for flag_id 3926646242: FLGrZSmWsjAdaAYU
+
+[13:55:57] Submitted 1 flags:
+['FLGrZSmWsjAdaAYU']
+Response:
+[u'correct']
+
+[13:56:52] Exploiting host team1 for flag_id 463401589
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[13:56:53] Retrieved flag from host team1 for flag_id 463401589: FLGVEJqJMcztwbUJ
+
+[13:59:17] Submitted 1 flags:
+['FLGVEJqJMcztwbUJ']
+Response:
+[u'correct']
+
+[14:00:13] Exploiting host team1 for flag_id 2792446191
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[14:00:13] Retrieved flag from host team1 for flag_id 2792446191: FLGkn25NsLrTnuRt
+
+[14:02:39] Submitted 1 flags:
+['FLGkn25NsLrTnuRt']
+Response:
+[u'correct']
+
+[14:03:33] Exploiting host team1 for flag_id 1025553031
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[14:03:34] Retrieved flag from host team1 for flag_id 1025553031: FLGwcAenKfAheqs1
+
+[14:06:28] Submitted 1 flags:
+['FLGwcAenKfAheqs1']
+Response:
+[u'correct']
+
+[14:07:23] Exploiting host team1 for flag_id 1738636998
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[14:07:23] Retrieved flag from host team1 for flag_id 1738636998: FLGb1ilbeykxQhOK
+
+[14:09:40] Submitted 1 flags:
+['FLGb1ilbeykxQhOK']
+Response:
+[u'correct']
+
+[14:10:35] Exploiting host team1 for flag_id 1292379473
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[14:10:35] Retrieved flag from host team1 for flag_id 1292379473: FLGV8ZHB9wkbBlPc
+
+[14:12:40] Submitted 1 flags:
+['FLGV8ZHB9wkbBlPc']
+Response:
+[u'correct']
+
+[14:13:35] Exploiting host team1 for flag_id 4236042416
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[14:13:35] Retrieved flag from host team1 for flag_id 4236042416: FLGUGsmKJx04jWxZ
+
+[14:15:56] Submitted 1 flags:
+['FLGUGsmKJx04jWxZ']
+Response:
+[u'correct']
+
+[14:16:51] Exploiting host team1 for flag_id 1083669059
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[14:16:51] Retrieved flag from host team1 for flag_id 1083669059: FLGnKgGcOAMAMB2b
+
+[14:19:03] Submitted 1 flags:
+['FLGnKgGcOAMAMB2b']
+Response:
+[u'correct']
+
+[14:19:58] Exploiting host team1 for flag_id 3367987437
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[14:19:59] Retrieved flag from host team1 for flag_id 3367987437: FLGgBCTx33uyuYIb
+
+[14:22:49] Submitted 1 flags:
+['FLGgBCTx33uyuYIb']
+Response:
+[u'correct']
+
+[14:23:44] Exploiting host team1 for flag_id 2927720629
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[14:23:44] Retrieved flag from host team1 for flag_id 2927720629: FLG7kArf5nUXkPWE
+
+[14:26:26] Submitted 1 flags:
+['FLG7kArf5nUXkPWE']
+Response:
+[u'correct']
+
+[14:27:21] Exploiting host team1 for flag_id 3364224354
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[14:27:22] Retrieved flag from host team1 for flag_id 3364224354: FLGJFT2bZq0Ghgha
+
+[14:29:24] Submitted 1 flags:
+['FLGJFT2bZq0Ghgha']
+Response:
+[u'correct']
+
+[14:30:19] Exploiting host team1 for flag_id 418835878
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[14:30:20] Retrieved flag from host team1 for flag_id 418835878: FLGZhcCWCndK51b3
+
+[14:33:14] Submitted 1 flags:
+['FLGZhcCWCndK51b3']
+Response:
+[u'correct']
+
+[14:34:08] Exploiting host team1 for flag_id 2654094647
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[14:34:09] Retrieved flag from host team1 for flag_id 2654094647: FLGQ1dLl7UAsZ6vI
+
+[14:37:03] Submitted 1 flags:
+['FLGQ1dLl7UAsZ6vI']
+Response:
+[u'correct']
+
+[14:37:58] Exploiting host team1 for flag_id 2412302620
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[14:37:59] Retrieved flag from host team1 for flag_id 2412302620: FLGBRQuGVrwSGYDu
+
+[14:39:59] Submitted 1 flags:
+['FLGBRQuGVrwSGYDu']
+Response:
+[u'correct']
+
+[14:40:55] Exploiting host team1 for flag_id 777927387
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[14:40:55] Retrieved flag from host team1 for flag_id 777927387: FLGOuBbK60evnTxF
+
+[14:43:43] Submitted 1 flags:
+['FLGOuBbK60evnTxF']
+Response:
+[u'correct']
+
+[14:44:38] Exploiting host team1 for flag_id 1581890493
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[14:44:38] Retrieved flag from host team1 for flag_id 1581890493: FLGrgHvwjmjb0g84
+
+[14:47:21] Submitted 1 flags:
+['FLGrgHvwjmjb0g84']
+Response:
+[u'correct']
+
+[14:48:17] Exploiting host team1 for flag_id 341026880
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[14:48:17] Retrieved flag from host team1 for flag_id 341026880: FLG6p0SHelO6jfrB
+
+[14:51:04] Submitted 1 flags:
+['FLG6p0SHelO6jfrB']
+Response:
+[u'correct']
+
+[14:51:59] Exploiting host team1 for flag_id 1448806034
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[14:52:00] Retrieved flag from host team1 for flag_id 1448806034: FLGkN2G4uFCIHl4K
+
+[14:54:22] Submitted 1 flags:
+['FLGkN2G4uFCIHl4K']
+Response:
+[u'correct']
+
+[14:55:18] Exploiting host team1 for flag_id 342930889
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[14:55:18] Retrieved flag from host team1 for flag_id 342930889: FLGBuaLFBysvzjiO
+
+[14:58:00] Submitted 1 flags:
+['FLGBuaLFBysvzjiO']
+Response:
+[u'correct']
+
+[14:58:54] Exploiting host team1 for flag_id 3228169482
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[14:58:55] Retrieved flag from host team1 for flag_id 3228169482: FLGlrdBSwXbxnZTB
+
+[15:01:15] Submitted 1 flags:
+['FLGlrdBSwXbxnZTB']
+Response:
+[u'correct']
+
+[15:02:10] Exploiting host team1 for flag_id 4291240120
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[15:02:10] Retrieved flag from host team1 for flag_id 4291240120: FLGSKJd8NF9PPHTr
+
+[15:04:09] Submitted 1 flags:
+['FLGSKJd8NF9PPHTr']
+Response:
+[u'correct']
+
+[15:05:05] Exploiting host team1 for flag_id 1846081431
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[15:05:05] Retrieved flag from host team1 for flag_id 1846081431: FLGHk41JefhJ2n4l
+
+[15:07:10] Submitted 1 flags:
+['FLGHk41JefhJ2n4l']
+Response:
+[u'correct']
+
+[15:08:05] Exploiting host team1 for flag_id 256009329
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[15:08:05] Retrieved flag from host team1 for flag_id 256009329: FLGfVV3UaPumm4dD
+
+[15:10:11] Submitted 1 flags:
+['FLGfVV3UaPumm4dD']
+Response:
+[u'correct']
+
+[15:11:06] Exploiting host team1 for flag_id 2161548503
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[15:11:07] Retrieved flag from host team1 for flag_id 2161548503: FLGPuUpob50EfRs7
+
+[15:13:32] Submitted 1 flags:
+['FLGPuUpob50EfRs7']
+Response:
+[u'correct']
+
+[15:14:27] Exploiting host team1 for flag_id 2256966755
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[15:14:28] Retrieved flag from host team1 for flag_id 2256966755: FLGNKwg1utWrcLYU
+
+[15:16:27] Submitted 1 flags:
+['FLGNKwg1utWrcLYU']
+Response:
+[u'correct']
+
+[15:17:22] Exploiting host team1 for flag_id 1834719771
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[15:17:23] Retrieved flag from host team1 for flag_id 1834719771: FLG8DdgOaY6wgA13
+
+[15:19:52] Submitted 1 flags:
+['FLG8DdgOaY6wgA13']
+Response:
+[u'correct']
+
+[15:20:47] Exploiting host team1 for flag_id 3335212133
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[15:20:48] Retrieved flag from host team1 for flag_id 3335212133: FLGtfL8EzlYVRuJu
+
+[15:23:01] Submitted 1 flags:
+['FLGtfL8EzlYVRuJu']
+Response:
+[u'correct']
+
+[15:23:56] Exploiting host team1 for flag_id 2926093784
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[15:23:56] Retrieved flag from host team1 for flag_id 2926093784: FLGv6aWcVRnVSytS
+
+[15:26:10] Submitted 1 flags:
+['FLGv6aWcVRnVSytS']
+Response:
+[u'correct']
+
+[15:27:05] Exploiting host team1 for flag_id 249498852
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[15:27:06] Retrieved flag from host team1 for flag_id 249498852: FLGOr0z2Sx1XBTae
+
+[15:29:41] Submitted 1 flags:
+['FLGOr0z2Sx1XBTae']
+Response:
+[u'correct']
+
+[15:30:35] Exploiting host team1 for flag_id 908037098
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[15:30:36] Retrieved flag from host team1 for flag_id 908037098: FLGzUs3CG9CJtXFT
+
+[15:32:32] Submitted 1 flags:
+['FLGzUs3CG9CJtXFT']
+Response:
+[u'correct']
+
+[15:33:27] Exploiting host team1 for flag_id 4018646413
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[15:33:27] Retrieved flag from host team1 for flag_id 4018646413: FLGBI8FABKh5kXOS
+
+[15:35:26] Submitted 1 flags:
+['FLGBI8FABKh5kXOS']
+Response:
+[u'correct']
+
+[15:36:21] Exploiting host team1 for flag_id 2609570055
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[15:36:22] Retrieved flag from host team1 for flag_id 2609570055: FLGah4c6i2Z7nrd9
+
+[15:38:35] Submitted 1 flags:
+['FLGah4c6i2Z7nrd9']
+Response:
+[u'correct']
+
+[15:39:30] Exploiting host team1 for flag_id 1979724741
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[15:39:30] Retrieved flag from host team1 for flag_id 1979724741: FLGfuriM4hALUCZR
+
+[15:41:40] Submitted 1 flags:
+['FLGfuriM4hALUCZR']
+Response:
+[u'correct']
+
+[15:42:35] Exploiting host team1 for flag_id 3555131729
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[15:42:35] Retrieved flag from host team1 for flag_id 3555131729: FLGtJj9WA06zyadv
+
+[15:45:12] Submitted 1 flags:
+['FLGtJj9WA06zyadv']
+Response:
+[u'correct']
+
+[15:46:07] Exploiting host team1 for flag_id 1791035573
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[15:46:07] Retrieved flag from host team1 for flag_id 1791035573: FLG8pgNU9PPjmthH
+
+[15:48:48] Submitted 1 flags:
+['FLG8pgNU9PPjmthH']
+Response:
+[u'correct']
+
+[15:49:43] Exploiting host team1 for flag_id 2158259229
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[15:49:44] Retrieved flag from host team1 for flag_id 2158259229: FLG2TWWfPPi5SnFd
+
+[15:52:36] Submitted 1 flags:
+['FLG2TWWfPPi5SnFd']
+Response:
+[u'correct']
+
+[15:53:30] Exploiting host team1 for flag_id 975305768
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[15:53:31] Retrieved flag from host team1 for flag_id 975305768: FLGIyeuPAr6qTRg9
+
+[15:55:34] Submitted 1 flags:
+['FLGIyeuPAr6qTRg9']
+Response:
+[u'correct']
+
+[15:56:29] Exploiting host team1 for flag_id 4290705276
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[15:56:30] Retrieved flag from host team1 for flag_id 4290705276: FLGgkZrPqIPcEd1R
+
+[15:58:40] Submitted 1 flags:
+['FLGgkZrPqIPcEd1R']
+Response:
+[u'correct']
+
+[15:59:35] Exploiting host team1 for flag_id 1039752609
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[15:59:36] Retrieved flag from host team1 for flag_id 1039752609: FLGGhLIZhOW4gO16
+
+[16:01:32] Submitted 1 flags:
+['FLGGhLIZhOW4gO16']
+Response:
+[u'correct']
+
+[16:02:27] Exploiting host team1 for flag_id 1748457561
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[16:02:28] Retrieved flag from host team1 for flag_id 1748457561: FLGygynPTJ5FToFi
+
+[16:04:36] Submitted 1 flags:
+['FLGygynPTJ5FToFi']
+Response:
+[u'correct']
+
+[16:05:32] Exploiting host team1 for flag_id 1084475935
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[16:05:32] Retrieved flag from host team1 for flag_id 1084475935: FLG3Rkcv738oOUe7
+
+[16:07:34] Submitted 1 flags:
+['FLG3Rkcv738oOUe7']
+Response:
+[u'correct']
+
+[16:08:28] Exploiting host team1 for flag_id 267967884
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[16:08:29] Retrieved flag from host team1 for flag_id 267967884: FLGHrRk84uTUUEB3
+
+[16:10:50] Submitted 1 flags:
+['FLGHrRk84uTUUEB3']
+Response:
+[u'correct']
+
+[16:11:46] Exploiting host team1 for flag_id 923500428
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[16:11:47] Retrieved flag from host team1 for flag_id 923500428: FLGTRr7d5Xw0aLam
+
+[16:13:53] Submitted 1 flags:
+['FLGTRr7d5Xw0aLam']
+Response:
+[u'correct']
+
+[16:14:49] Exploiting host team1 for flag_id 3981609253
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[16:14:49] Retrieved flag from host team1 for flag_id 3981609253: FLGW1gp0UJaCEPEA
+
+[16:17:35] Submitted 1 flags:
+['FLGW1gp0UJaCEPEA']
+Response:
+[u'correct']
+
+[16:18:30] Exploiting host team1 for flag_id 739889158
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[16:18:30] Retrieved flag from host team1 for flag_id 739889158: FLGqymdMKpgHLoRa
+
+[16:21:19] Submitted 1 flags:
+['FLGqymdMKpgHLoRa']
+Response:
+[u'correct']
+
+[16:22:14] Exploiting host team1 for flag_id 3173231740
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[16:22:14] Retrieved flag from host team1 for flag_id 3173231740: FLGrlOf6rPV8SK26
+
+[16:24:40] Submitted 1 flags:
+['FLGrlOf6rPV8SK26']
+Response:
+[u'correct']
+
+[16:25:35] Exploiting host team1 for flag_id 825977953
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[16:25:35] Retrieved flag from host team1 for flag_id 825977953: FLGLuFktn949AD4z
+
+[16:27:50] Submitted 1 flags:
+['FLGLuFktn949AD4z']
+Response:
+[u'correct']
+
+[16:28:45] Exploiting host team1 for flag_id 334484233
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[16:28:45] Retrieved flag from host team1 for flag_id 334484233: FLGtoggkZsHKyldM
+
+[16:31:29] Submitted 1 flags:
+['FLGtoggkZsHKyldM']
+Response:
+[u'correct']
+
+[16:32:25] Exploiting host team1 for flag_id 1767463978
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[16:32:25] Retrieved flag from host team1 for flag_id 1767463978: FLGuxVD4VXV12AP3
+
+[16:35:19] Submitted 1 flags:
+['FLGuxVD4VXV12AP3']
+Response:
+[u'correct']
+
+[16:36:14] Exploiting host team1 for flag_id 2453310577
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[16:36:14] Retrieved flag from host team1 for flag_id 2453310577: FLGKbpccwOEewDnK
+
+[16:38:12] Submitted 1 flags:
+['FLGKbpccwOEewDnK']
+Response:
+[u'correct']
+
+[16:39:07] Exploiting host team1 for flag_id 1927703874
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[16:39:07] Retrieved flag from host team1 for flag_id 1927703874: FLG3oXRKD7c2U1OX
+
+[16:41:41] Submitted 1 flags:
+['FLG3oXRKD7c2U1OX']
+Response:
+[u'correct']
+
+[16:42:36] Exploiting host team1 for flag_id 1245265459
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[16:42:36] Retrieved flag from host team1 for flag_id 1245265459: FLGkjpJD7eS9CCJC
+
+[16:45:23] Submitted 1 flags:
+['FLGkjpJD7eS9CCJC']
+Response:
+[u'correct']
+
+[16:46:18] Exploiting host team1 for flag_id 923196878
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[16:46:18] Retrieved flag from host team1 for flag_id 923196878: FLGWIud9ILza4b1V
+
+[16:48:22] Submitted 1 flags:
+['FLGWIud9ILza4b1V']
+Response:
+[u'correct']
+
+[16:49:17] Exploiting host team1 for flag_id 1723681102
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[16:49:17] Retrieved flag from host team1 for flag_id 1723681102: FLGse8u9GslMRO7y
+
+[16:51:53] Submitted 1 flags:
+['FLGse8u9GslMRO7y']
+Response:
+[u'correct']
+
+[16:52:48] Exploiting host team1 for flag_id 1777816327
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[16:52:48] Retrieved flag from host team1 for flag_id 1777816327: FLGembuRXfiV9Dwn
+
+[16:54:55] Submitted 1 flags:
+['FLGembuRXfiV9Dwn']
+Response:
+[u'correct']
+
+[16:55:50] Exploiting host team1 for flag_id 3064942512
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[16:55:50] Retrieved flag from host team1 for flag_id 3064942512: FLGiysfCq6xuvmeA
+
+[16:58:27] Submitted 1 flags:
+['FLGiysfCq6xuvmeA']
+Response:
+[u'correct']
+
+[16:59:22] Exploiting host team1 for flag_id 2764879243
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[16:59:22] Retrieved flag from host team1 for flag_id 2764879243: FLGERJeJC667hkdn
+
+[17:01:47] Submitted 1 flags:
+['FLGERJeJC667hkdn']
+Response:
+[u'correct']
+
+[17:02:42] Exploiting host team1 for flag_id 2494714570
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[17:02:42] Retrieved flag from host team1 for flag_id 2494714570: FLGcN3FRZmtJ6yiN
+
+[17:04:45] Submitted 1 flags:
+['FLGcN3FRZmtJ6yiN']
+Response:
+[u'correct']
+
+[17:05:40] Exploiting host team1 for flag_id 1866187918
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[17:05:40] Retrieved flag from host team1 for flag_id 1866187918: FLGbVUyC8XI8Iw2a
+
+[17:08:12] Submitted 1 flags:
+['FLGbVUyC8XI8Iw2a']
+Response:
+[u'correct']
+
+[17:09:07] Exploiting host team1 for flag_id 256145558
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[17:09:07] Retrieved flag from host team1 for flag_id 256145558: FLGFWMAuDL5trEn1
+
+[17:12:01] Submitted 1 flags:
+['FLGFWMAuDL5trEn1']
+Response:
+[u'correct']
+
+[17:12:56] Exploiting host team1 for flag_id 2348022071
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[17:12:57] Retrieved flag from host team1 for flag_id 2348022071: FLGJ8AII0MpsRiTq
+
+[17:15:32] Submitted 1 flags:
+['FLGJ8AII0MpsRiTq']
+Response:
+[u'correct']
+
+[17:16:27] Exploiting host team1 for flag_id 1704879705
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[17:16:27] Retrieved flag from host team1 for flag_id 1704879705: FLGwj39zLa4TVNL1
+
+[17:18:49] Submitted 1 flags:
+['FLGwj39zLa4TVNL1']
+Response:
+[u'correct']
+
+[17:19:44] Exploiting host team1 for flag_id 3738197247
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[17:19:44] Retrieved flag from host team1 for flag_id 3738197247: FLGB5nUWYGFwU65w
+
+[17:21:47] Submitted 1 flags:
+['FLGB5nUWYGFwU65w']
+Response:
+[u'correct']
+
+[17:22:42] Exploiting host team1 for flag_id 4156921112
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[17:22:42] Retrieved flag from host team1 for flag_id 4156921112: FLG2wGkohpjbzYtS
+
+[17:24:56] Submitted 1 flags:
+['FLG2wGkohpjbzYtS']
+Response:
+[u'correct']
+
+[17:25:51] Exploiting host team1 for flag_id 491643300
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[17:25:51] Retrieved flag from host team1 for flag_id 491643300: FLGVyyPYmTIzvdn4
+
+[17:28:42] Submitted 1 flags:
+['FLGVyyPYmTIzvdn4']
+Response:
+[u'correct']
+
+[17:29:37] Exploiting host team1 for flag_id 2374025803
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[17:29:39] Retrieved flag from host team1 for flag_id 2374025803: FLGaNcBOmX6pnGu6
+
+[17:32:09] Submitted 1 flags:
+['FLGaNcBOmX6pnGu6']
+Response:
+[u'correct']
+
+[17:33:04] Exploiting host team1 for flag_id 4008135327
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[17:33:04] Retrieved flag from host team1 for flag_id 4008135327: FLGyc1rKWfDglkUu
+
+[17:35:22] Submitted 1 flags:
+['FLGyc1rKWfDglkUu']
+Response:
+[u'correct']
+
+[17:36:18] Exploiting host team1 for flag_id 3602471174
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[17:36:18] Retrieved flag from host team1 for flag_id 3602471174: FLGs4WagimtrHVGQ
+
+[17:38:38] Submitted 1 flags:
+['FLGs4WagimtrHVGQ']
+Response:
+[u'correct']
+
+[17:39:33] Exploiting host team1 for flag_id 3000509739
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[17:39:33] Retrieved flag from host team1 for flag_id 3000509739: FLGOVVKxQbSDIDcl
+
+[17:41:31] Submitted 1 flags:
+['FLGOVVKxQbSDIDcl']
+Response:
+[u'correct']
+
+[17:42:26] Exploiting host team1 for flag_id 1024427286
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[17:42:26] Retrieved flag from host team1 for flag_id 1024427286: FLGRbJLGKmKqgDh3
+
+[17:44:47] Submitted 1 flags:
+['FLGRbJLGKmKqgDh3']
+Response:
+[u'correct']
+
+[17:45:42] Exploiting host team1 for flag_id 1313881257
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[17:45:43] Retrieved flag from host team1 for flag_id 1313881257: FLGNKZtP4AVtRN71
+
+[17:48:04] Submitted 1 flags:
+['FLGNKZtP4AVtRN71']
+Response:
+[u'correct']
+
+[17:48:59] Exploiting host team1 for flag_id 1713226598
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[17:48:59] Retrieved flag from host team1 for flag_id 1713226598: FLGRCJNVn1iOVRf1
+
+[17:51:13] Submitted 1 flags:
+['FLGRCJNVn1iOVRf1']
+Response:
+[u'correct']
+
+[17:52:09] Exploiting host team1 for flag_id 1942315661
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[17:52:09] Retrieved flag from host team1 for flag_id 1942315661: FLG1mZYNUTJCKZ4R
+
+[17:54:21] Submitted 1 flags:
+['FLG1mZYNUTJCKZ4R']
+Response:
+[u'correct']
+
+[17:55:16] Exploiting host team1 for flag_id 2968790113
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[17:55:16] Retrieved flag from host team1 for flag_id 2968790113: FLGOvX511c04Pyc5
+
+[17:57:40] Submitted 1 flags:
+['FLGOvX511c04Pyc5']
+Response:
+[u'correct']
+
+[17:58:35] Exploiting host team1 for flag_id 2664066302
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[17:58:35] Retrieved flag from host team1 for flag_id 2664066302: FLGOf9jyZNgqm3GP
+
+[18:01:06] Submitted 1 flags:
+['FLGOf9jyZNgqm3GP']
+Response:
+[u'correct']
+
+[18:02:01] Exploiting host team1 for flag_id 1398699633
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[18:02:01] Retrieved flag from host team1 for flag_id 1398699633: FLGdzwibSOr2YmH8
+
+[18:04:04] Submitted 1 flags:
+['FLGdzwibSOr2YmH8']
+Response:
+[u'correct']
+
+[18:05:00] Exploiting host team1 for flag_id 2230987469
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[18:05:00] Retrieved flag from host team1 for flag_id 2230987469: FLG3voDW1jMwhMlu
+
+[18:07:46] Submitted 1 flags:
+['FLG3voDW1jMwhMlu']
+Response:
+[u'correct']
+
+[18:08:41] Exploiting host team1 for flag_id 2010456091
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[18:08:41] Retrieved flag from host team1 for flag_id 2010456091: FLGA4JNGHxkYXJE0
+
+[18:10:47] Submitted 1 flags:
+['FLGA4JNGHxkYXJE0']
+Response:
+[u'correct']
+
+[18:11:42] Exploiting host team1 for flag_id 1210055078
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[18:11:42] Retrieved flag from host team1 for flag_id 1210055078: FLGIUlCvuisejUp7
+
+[18:13:51] Submitted 1 flags:
+['FLGIUlCvuisejUp7']
+Response:
+[u'correct']
+
+[18:14:46] Exploiting host team1 for flag_id 1972527154
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[18:14:46] Retrieved flag from host team1 for flag_id 1972527154: FLG6LnB6jskCazqH
+
+[18:17:04] Submitted 1 flags:
+['FLG6LnB6jskCazqH']
+Response:
+[u'correct']
+
+[18:17:59] Exploiting host team1 for flag_id 303405079
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[18:18:00] Retrieved flag from host team1 for flag_id 303405079: FLG24Mo00mf6O6Gl
+
+[18:20:54] Submitted 1 flags:
+['FLG24Mo00mf6O6Gl']
+Response:
+[u'correct']
+
+[18:21:49] Exploiting host team1 for flag_id 1373192288
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[18:21:49] Retrieved flag from host team1 for flag_id 1373192288: FLGh89AIHowib6gq
+
+[18:23:53] Submitted 1 flags:
+['FLGh89AIHowib6gq']
+Response:
+[u'correct']
+
+[18:24:48] Exploiting host team1 for flag_id 3862000923
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[18:24:49] Retrieved flag from host team1 for flag_id 3862000923: FLGabkT77e0tK75v
+
+[18:27:43] Submitted 1 flags:
+['FLGabkT77e0tK75v']
+Response:
+[u'correct']
+
+[18:28:38] Exploiting host team1 for flag_id 1555236093
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[18:28:38] Retrieved flag from host team1 for flag_id 1555236093: FLG4BeRJ21Zj5eNX
+
+[18:30:49] Submitted 1 flags:
+['FLG4BeRJ21Zj5eNX']
+Response:
+[u'correct']
+
+[18:31:44] Exploiting host team1 for flag_id 697399938
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[18:31:44] Retrieved flag from host team1 for flag_id 697399938: FLGOireg0YdYiFxO
+
+[18:34:27] Submitted 1 flags:
+['FLGOireg0YdYiFxO']
+Response:
+[u'correct']
+
+[18:35:22] Exploiting host team1 for flag_id 1747459471
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[18:35:22] Retrieved flag from host team1 for flag_id 1747459471: FLGhZ49dKpdWjxJu
+
+[18:38:14] Submitted 1 flags:
+['FLGhZ49dKpdWjxJu']
+Response:
+[u'correct']
+
+[18:39:09] Exploiting host team1 for flag_id 4282577954
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[18:39:09] Retrieved flag from host team1 for flag_id 4282577954: FLGUcakWIDkS5n0m
+
+[18:41:47] Submitted 1 flags:
+['FLGUcakWIDkS5n0m']
+Response:
+[u'correct']
+
+[18:42:42] Exploiting host team1 for flag_id 2134362459
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[18:42:42] Retrieved flag from host team1 for flag_id 2134362459: FLGkk5BtHVkzL4P7
+
+[18:45:25] Submitted 1 flags:
+['FLGkk5BtHVkzL4P7']
+Response:
+[u'correct']
+
+[18:46:20] Exploiting host team1 for flag_id 3423931843
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[18:46:20] Retrieved flag from host team1 for flag_id 3423931843: FLGV5lscwwTp6Yun
+
+[18:49:12] Submitted 1 flags:
+['FLGV5lscwwTp6Yun']
+Response:
+[u'correct']
+
+[18:50:07] Exploiting host team1 for flag_id 1728010839
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[18:50:08] Retrieved flag from host team1 for flag_id 1728010839: FLGBLtK2retfRcc0
+
+[18:53:00] Submitted 1 flags:
+['FLGBLtK2retfRcc0']
+Response:
+[u'correct']
+
+[18:53:55] Exploiting host team1 for flag_id 3331071000
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[18:53:56] Retrieved flag from host team1 for flag_id 3331071000: FLGuaoAZVra5PNPi
+
+[18:56:05] Submitted 1 flags:
+['FLGuaoAZVra5PNPi']
+Response:
+[u'correct']
+
+[18:57:00] Exploiting host team1 for flag_id 3461372900
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[18:57:00] Retrieved flag from host team1 for flag_id 3461372900: FLGkc9CLPZ2HS9G9
+
+[18:59:33] Submitted 1 flags:
+['FLGkc9CLPZ2HS9G9']
+Response:
+[u'correct']
+
+[19:00:28] Exploiting host team1 for flag_id 555314884
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[19:00:28] Retrieved flag from host team1 for flag_id 555314884: FLGe6R5QjmrKh93N
+
+[19:03:04] Submitted 1 flags:
+['FLGe6R5QjmrKh93N']
+Response:
+[u'correct']
+
+[19:03:59] Exploiting host team1 for flag_id 2971808566
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[19:03:59] Retrieved flag from host team1 for flag_id 2971808566: FLGe6p65T6iBCXEY
+
+[19:06:16] Submitted 1 flags:
+['FLGe6p65T6iBCXEY']
+Response:
+[u'correct']
+
+[19:07:11] Exploiting host team1 for flag_id 21957911
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[19:07:11] Retrieved flag from host team1 for flag_id 21957911: FLGxofjF3Z4DcuEC
+
+[19:09:17] Submitted 1 flags:
+['FLGxofjF3Z4DcuEC']
+Response:
+[u'correct']
+
+[19:10:12] Exploiting host team1 for flag_id 4190133451
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[19:10:12] Retrieved flag from host team1 for flag_id 4190133451: FLG2SGx1eJcmGC00
+
+[19:12:45] Submitted 1 flags:
+['FLG2SGx1eJcmGC00']
+Response:
+[u'correct']
+
+[19:13:40] Exploiting host team1 for flag_id 1400825076
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[19:13:40] Retrieved flag from host team1 for flag_id 1400825076: FLGduUX8h6ZSxTHP
+
+[19:16:20] Submitted 1 flags:
+['FLGduUX8h6ZSxTHP']
+Response:
+[u'correct']
+
+[19:17:15] Exploiting host team1 for flag_id 95752076
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[19:17:15] Retrieved flag from host team1 for flag_id 95752076: FLGDnaDqVVBYjhia
+
+[19:19:30] Submitted 1 flags:
+['FLGDnaDqVVBYjhia']
+Response:
+[u'correct']
+
+[19:20:25] Exploiting host team1 for flag_id 230592956
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[19:20:25] Retrieved flag from host team1 for flag_id 230592956: FLGbSBM8YcsdNPIn
+
+[19:23:20] Submitted 1 flags:
+['FLGbSBM8YcsdNPIn']
+Response:
+[u'correct']
+
+[19:24:15] Exploiting host team1 for flag_id 229904737
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[19:24:15] Retrieved flag from host team1 for flag_id 229904737: FLGKH3MvNpOrqkAu
+
+[19:26:36] Submitted 1 flags:
+['FLGKH3MvNpOrqkAu']
+Response:
+[u'correct']
+
+[19:27:31] Exploiting host team1 for flag_id 2315549226
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[19:27:31] Retrieved flag from host team1 for flag_id 2315549226: FLGuuPKCYn0k2ZMW
+
+[19:29:56] Submitted 1 flags:
+['FLGuuPKCYn0k2ZMW']
+Response:
+[u'correct']
+
+[19:30:53] Exploiting host team1 for flag_id 3983973518
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[19:30:55] Retrieved flag from host team1 for flag_id 3983973518: FLGJxzq6nwx1gmf9
+
+[19:33:11] Submitted 1 flags:
+['FLGJxzq6nwx1gmf9']
+Response:
+[u'correct']
+
+[19:34:06] Exploiting host team1 for flag_id 1542830074
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[19:34:07] Retrieved flag from host team1 for flag_id 1542830074: FLGGQAPWGCHl0I7p
+
+[19:36:54] Submitted 1 flags:
+['FLGGQAPWGCHl0I7p']
+Response:
+[u'correct']
+
+[19:37:51] Exploiting host team1 for flag_id 384042200
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[19:37:53] Retrieved flag from host team1 for flag_id 384042200: FLGiUEjOE9SHSXW7
+
+[19:40:13] Submitted 1 flags:
+['FLGiUEjOE9SHSXW7']
+Response:
+[u'correct']
+
+[19:41:08] Exploiting host team1 for flag_id 682446373
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[19:41:08] Retrieved flag from host team1 for flag_id 682446373: FLGfDLxq0tVZULBM
+
+[19:44:02] Submitted 1 flags:
+['FLGfDLxq0tVZULBM']
+Response:
+[u'correct']
+
+[19:44:57] Exploiting host team1 for flag_id 3029654257
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[19:44:57] Retrieved flag from host team1 for flag_id 3029654257: FLGOHMYgtmlJJaWg
+
+[19:47:49] Submitted 1 flags:
+['FLGOHMYgtmlJJaWg']
+Response:
+[u'correct']
+
+[19:48:44] Exploiting host team1 for flag_id 3365641029
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[19:48:44] Retrieved flag from host team1 for flag_id 3365641029: FLGiJD15f8sc7a8V
+
+[19:50:42] Submitted 1 flags:
+['FLGiJD15f8sc7a8V']
+Response:
+[u'correct']
+
+[19:51:37] Exploiting host team1 for flag_id 1948621445
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[19:51:37] Retrieved flag from host team1 for flag_id 1948621445: FLG80A40v6smYSeo
+
+[19:54:19] Submitted 1 flags:
+['FLG80A40v6smYSeo']
+Response:
+[u'correct']
+
+[19:55:14] Exploiting host team1 for flag_id 1576845773
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[19:55:14] Retrieved flag from host team1 for flag_id 1576845773: FLGe7DoVUwrvfU3y
+
+[19:57:43] Submitted 1 flags:
+['FLGe7DoVUwrvfU3y']
+Response:
+[u'correct']
+
+[19:58:38] Exploiting host team1 for flag_id 2356875977
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[19:58:38] Retrieved flag from host team1 for flag_id 2356875977: FLGNgEGOEeNNVEac
+
+[20:00:57] Submitted 1 flags:
+['FLGNgEGOEeNNVEac']
+Response:
+[u'correct']
+
+[20:01:52] Exploiting host team1 for flag_id 2570243739
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[20:01:52] Retrieved flag from host team1 for flag_id 2570243739: FLGm5TYcSCbusmk3
+
+[20:04:28] Submitted 1 flags:
+['FLGm5TYcSCbusmk3']
+Response:
+[u'correct']
+
+[20:05:23] Exploiting host team1 for flag_id 2218422911
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[20:05:23] Retrieved flag from host team1 for flag_id 2218422911: FLGf0cfeLxk1C8dE
+
+[20:07:43] Submitted 1 flags:
+['FLGf0cfeLxk1C8dE']
+Response:
+[u'correct']
+
+[20:08:38] Exploiting host team1 for flag_id 4203119894
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[20:08:38] Retrieved flag from host team1 for flag_id 4203119894: FLGJLfqqeonBOdOl
+
+[20:11:14] Submitted 1 flags:
+['FLGJLfqqeonBOdOl']
+Response:
+[u'correct']
+
+[20:12:09] Exploiting host team1 for flag_id 4092747983
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[20:12:09] Retrieved flag from host team1 for flag_id 4092747983: FLGpcNDcdNeLRIUU
+
+[20:14:51] Submitted 1 flags:
+['FLGpcNDcdNeLRIUU']
+Response:
+[u'correct']
+
+[20:15:46] Exploiting host team1 for flag_id 3344603738
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[20:15:46] Retrieved flag from host team1 for flag_id 3344603738: FLGIa1eG1j63BUXu
+
+[20:18:40] Submitted 1 flags:
+['FLGIa1eG1j63BUXu']
+Response:
+[u'correct']
+
+[20:19:35] Exploiting host team1 for flag_id 3337750409
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[20:19:35] Retrieved flag from host team1 for flag_id 3337750409: FLGSuRSBBA3fGvOI
+
+[20:22:09] Submitted 1 flags:
+['FLGSuRSBBA3fGvOI']
+Response:
+[u'correct']
+
+[20:23:04] Exploiting host team1 for flag_id 994181548
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[20:23:04] Retrieved flag from host team1 for flag_id 994181548: FLGhnxtPDWClyr8G
+
+[20:25:36] Submitted 1 flags:
+['FLGhnxtPDWClyr8G']
+Response:
+[u'correct']
+
+[20:26:31] Exploiting host team1 for flag_id 222723417
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[20:26:31] Retrieved flag from host team1 for flag_id 222723417: FLG19SDGfKRDnZjt
+
+[20:29:26] Submitted 1 flags:
+['FLG19SDGfKRDnZjt']
+Response:
+[u'correct']
+
+[20:30:21] Exploiting host team1 for flag_id 988533917
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[20:30:22] Retrieved flag from host team1 for flag_id 988533917: FLGpU5S8GRYc1j1i
+
+[20:32:56] Submitted 1 flags:
+['FLGpU5S8GRYc1j1i']
+Response:
+[u'correct']
+
+[20:33:51] Exploiting host team1 for flag_id 733664649
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[20:33:51] Retrieved flag from host team1 for flag_id 733664649: FLGBh3ujvCSOyo7x
+
+[20:36:09] Submitted 1 flags:
+['FLGBh3ujvCSOyo7x']
+Response:
+[u'correct']
+
+[20:37:04] Exploiting host team1 for flag_id 33613772
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[20:37:05] Retrieved flag from host team1 for flag_id 33613772: FLGOwCXfhUG4uIjH
+
+[20:39:34] Submitted 1 flags:
+['FLGOwCXfhUG4uIjH']
+Response:
+[u'correct']
+
+[20:40:29] Exploiting host team1 for flag_id 1493177873
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[20:40:29] Retrieved flag from host team1 for flag_id 1493177873: FLGg2G6s4Zr59Urc
+
+[20:43:24] Submitted 1 flags:
+['FLGg2G6s4Zr59Urc']
+Response:
+[u'correct']
+
+[20:44:19] Exploiting host team1 for flag_id 2512425520
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[20:44:20] Retrieved flag from host team1 for flag_id 2512425520: FLGmGPcxlT7ydQ0I
+
+[20:46:46] Submitted 1 flags:
+['FLGmGPcxlT7ydQ0I']
+Response:
+[u'correct']
+
+[20:47:41] Exploiting host team1 for flag_id 151236885
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[20:47:41] Retrieved flag from host team1 for flag_id 151236885: FLG5W1K1BHEm64TA
+
+[20:50:20] Submitted 1 flags:
+['FLG5W1K1BHEm64TA']
+Response:
+[u'correct']
+
+[20:51:15] Exploiting host team1 for flag_id 3710628500
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[20:51:15] Retrieved flag from host team1 for flag_id 3710628500: FLG4kn17I75PFCe9
+
+[20:53:47] Submitted 1 flags:
+['FLG4kn17I75PFCe9']
+Response:
+[u'correct']
+
+[20:54:42] Exploiting host team1 for flag_id 857179634
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[20:54:42] Retrieved flag from host team1 for flag_id 857179634: FLGzLjKtWaHRU98u
+
+[20:56:55] Submitted 1 flags:
+['FLGzLjKtWaHRU98u']
+Response:
+[u'correct']
+
+[20:57:50] Exploiting host team1 for flag_id 1160423496
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[20:57:50] Retrieved flag from host team1 for flag_id 1160423496: FLGfBNOonHWAo38w
+
+[21:00:28] Submitted 1 flags:
+['FLGfBNOonHWAo38w']
+Response:
+[u'correct']
+
+[21:01:23] Exploiting host team1 for flag_id 3131756940
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[21:01:24] Retrieved flag from host team1 for flag_id 3131756940: FLGSWsdbGecFSWwu
+
+[21:04:10] Submitted 1 flags:
+['FLGSWsdbGecFSWwu']
+Response:
+[u'correct']
+
+[21:05:05] Exploiting host team1 for flag_id 959914198
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[21:05:05] Retrieved flag from host team1 for flag_id 959914198: FLGvPoTR0X88TlMa
+
+[21:07:55] Submitted 1 flags:
+['FLGvPoTR0X88TlMa']
+Response:
+[u'correct']
+
+[21:08:50] Exploiting host team1 for flag_id 4154433627
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[21:08:50] Retrieved flag from host team1 for flag_id 4154433627: FLGU2JVlQJLxVCys
+
+[21:10:54] Submitted 1 flags:
+['FLGU2JVlQJLxVCys']
+Response:
+[u'correct']
+
+[21:11:49] Exploiting host team1 for flag_id 4032348438
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[21:11:49] Retrieved flag from host team1 for flag_id 4032348438: FLGXqnRMyVNDJkPC
+
+[21:14:08] Submitted 1 flags:
+['FLGXqnRMyVNDJkPC']
+Response:
+[u'correct']
+
+[21:15:03] Exploiting host team1 for flag_id 3824737296
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[21:15:03] Retrieved flag from host team1 for flag_id 3824737296: FLGnLuJ6JAoqoBwj
+
+[21:17:54] Submitted 1 flags:
+['FLGnLuJ6JAoqoBwj']
+Response:
+[u'correct']
+
+[21:18:49] Exploiting host team1 for flag_id 2405298243
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[21:18:49] Retrieved flag from host team1 for flag_id 2405298243: FLGUPF9MLeU3vDpu
+
+[21:21:05] Submitted 1 flags:
+['FLGUPF9MLeU3vDpu']
+Response:
+[u'correct']
+
+[21:22:00] Exploiting host team1 for flag_id 3496456777
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[21:22:00] Retrieved flag from host team1 for flag_id 3496456777: FLGwOJuEd5ASNnv8
+
+[21:24:08] Submitted 1 flags:
+['FLGwOJuEd5ASNnv8']
+Response:
+[u'correct']
+
+[21:25:03] Exploiting host team1 for flag_id 3202159389
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[21:25:03] Retrieved flag from host team1 for flag_id 3202159389: FLG9sTlfBVkpBFnC
+
+[21:27:09] Submitted 1 flags:
+['FLG9sTlfBVkpBFnC']
+Response:
+[u'correct']
+
+[21:28:04] Exploiting host team1 for flag_id 2995559332
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[21:28:04] Retrieved flag from host team1 for flag_id 2995559332: FLGwATAxNECQUtoJ
+
+[21:30:57] Submitted 1 flags:
+['FLGwATAxNECQUtoJ']
+Response:
+[u'correct']
+
+[21:31:36] Exploiting host team1 for flag_id 674392379
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[21:31:36] Retrieved flag from host team1 for flag_id 674392379: FLG1PYcqYOQBgJPu
+
+[21:34:02] Submitted 1 flags:
+['FLG1PYcqYOQBgJPu']
+Response:
+[u'correct']
+
+[21:34:57] Exploiting host team1 for flag_id 3711333187
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[21:34:57] Retrieved flag from host team1 for flag_id 3711333187: FLGpSmW2VUEoVPUR
+
+[21:36:58] Submitted 1 flags:
+['FLGpSmW2VUEoVPUR']
+Response:
+[u'correct']
+
+[21:37:53] Exploiting host team1 for flag_id 3257752684
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[21:37:53] Retrieved flag from host team1 for flag_id 3257752684: FLGHHFzEPtxIz86v
+
+[21:40:19] Submitted 1 flags:
+['FLGHHFzEPtxIz86v']
+Response:
+[u'correct']
+
+[21:41:14] Exploiting host team1 for flag_id 3641257317
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[21:41:14] Retrieved flag from host team1 for flag_id 3641257317: FLGEZBjHr3mPdflu
+
+[21:44:04] Submitted 1 flags:
+['FLGEZBjHr3mPdflu']
+Response:
+[u'correct']
+
+[21:44:59] Exploiting host team1 for flag_id 1092803112
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[21:44:59] Retrieved flag from host team1 for flag_id 1092803112: FLGUE3zcrhKauQQt
+
+[21:47:41] Submitted 1 flags:
+['FLGUE3zcrhKauQQt']
+Response:
+[u'correct']
+
+[21:48:36] Exploiting host team1 for flag_id 2709712783
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[21:48:36] Retrieved flag from host team1 for flag_id 2709712783: FLG2kYuU9z36ILQZ
+
+[21:51:25] Submitted 1 flags:
+['FLG2kYuU9z36ILQZ']
+Response:
+[u'correct']
+
+[21:52:19] Exploiting host team1 for flag_id 3825736136
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[21:52:19] Retrieved flag from host team1 for flag_id 3825736136: FLGbxwnZw8WFAiVq
+
+[21:54:59] Submitted 1 flags:
+['FLGbxwnZw8WFAiVq']
+Response:
+[u'correct']
+
+[21:55:54] Exploiting host team1 for flag_id 3294567846
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[21:55:54] Retrieved flag from host team1 for flag_id 3294567846: FLGbqR4H44As3WGl
+
+[21:58:03] Submitted 1 flags:
+['FLGbqR4H44As3WGl']
+Response:
+[u'correct']
+
+[21:58:58] Exploiting host team1 for flag_id 1007733286
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[21:58:58] Retrieved flag from host team1 for flag_id 1007733286: FLGReYpt8qeW4KHU
+
+[22:01:45] Submitted 1 flags:
+['FLGReYpt8qeW4KHU']
+Response:
+[u'correct']
+
+[22:02:40] Exploiting host team1 for flag_id 1224378089
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[22:02:40] Retrieved flag from host team1 for flag_id 1224378089: FLG3kzFwgiVo21PD
+
+[22:04:40] Submitted 1 flags:
+['FLG3kzFwgiVo21PD']
+Response:
+[u'correct']
+
+[22:05:35] Exploiting host team1 for flag_id 2331552474
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[22:05:35] Retrieved flag from host team1 for flag_id 2331552474: FLGgy3q4IY0zKCVx
+
+[22:08:25] Submitted 1 flags:
+['FLGgy3q4IY0zKCVx']
+Response:
+[u'correct']
+
+[22:09:20] Exploiting host team1 for flag_id 4244249704
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[22:09:20] Retrieved flag from host team1 for flag_id 4244249704: FLGGbnz3fHBRz3ar
+
+[22:11:35] Submitted 1 flags:
+['FLGGbnz3fHBRz3ar']
+Response:
+[u'correct']
+
+[22:12:30] Exploiting host team1 for flag_id 3860636659
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[22:12:30] Retrieved flag from host team1 for flag_id 3860636659: FLGwPog5O9A6DqKc
+
+[22:15:12] Submitted 1 flags:
+['FLGwPog5O9A6DqKc']
+Response:
+[u'correct']
+
+[22:16:07] Exploiting host team1 for flag_id 3534889514
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[22:16:07] Retrieved flag from host team1 for flag_id 3534889514: FLGUW5avGw2Iy9FN
+
+[22:18:16] Submitted 1 flags:
+['FLGUW5avGw2Iy9FN']
+Response:
+[u'correct']
+
+[22:19:11] Exploiting host team1 for flag_id 3367285022
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[22:19:11] Retrieved flag from host team1 for flag_id 3367285022: FLGRFFF68L6zy0Bb
+
+[22:21:37] Submitted 1 flags:
+['FLGRFFF68L6zy0Bb']
+Response:
+[u'correct']
+
+[22:22:32] Exploiting host team1 for flag_id 3889546278
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[22:22:32] Retrieved flag from host team1 for flag_id 3889546278: FLGnvWguYMNgsWsc
+
+[22:24:36] Submitted 1 flags:
+['FLGnvWguYMNgsWsc']
+Response:
+[u'correct']
+
+[22:25:31] Exploiting host team1 for flag_id 2179994527
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[22:25:31] Retrieved flag from host team1 for flag_id 2179994527: FLGoCiovXfdVmknB
+
+[22:28:24] Submitted 1 flags:
+['FLGoCiovXfdVmknB']
+Response:
+[u'correct']
+
+[22:29:19] Exploiting host team1 for flag_id 3083239375
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[22:29:19] Retrieved flag from host team1 for flag_id 3083239375: FLG2fYG6N4SvVDil
+
+[22:31:54] Submitted 1 flags:
+['FLG2fYG6N4SvVDil']
+Response:
+[u'correct']
+
+[22:32:49] Exploiting host team1 for flag_id 575007867
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[22:32:49] Retrieved flag from host team1 for flag_id 575007867: FLG1Z8hUVLln3kYL
+
+[22:34:46] Submitted 1 flags:
+['FLG1Z8hUVLln3kYL']
+Response:
+[u'correct']
+
+[22:35:41] Exploiting host team1 for flag_id 1224611280
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[22:35:41] Retrieved flag from host team1 for flag_id 1224611280: FLGaJsa0Yrlj0Fjs
+
+[22:37:42] Submitted 1 flags:
+['FLGaJsa0Yrlj0Fjs']
+Response:
+[u'correct']
+
+[22:38:37] Exploiting host team1 for flag_id 3262824730
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[22:38:37] Retrieved flag from host team1 for flag_id 3262824730: FLGitrGInZwi4xn3
+
+[22:40:37] Submitted 1 flags:
+['FLGitrGInZwi4xn3']
+Response:
+[u'correct']
+
+[22:41:32] Exploiting host team1 for flag_id 2281779852
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[22:41:32] Retrieved flag from host team1 for flag_id 2281779852: FLGm02tCkxP9PoEf
+
+[22:44:09] Submitted 1 flags:
+['FLGm02tCkxP9PoEf']
+Response:
+[u'correct']
+
+[22:45:04] Exploiting host team1 for flag_id 969655801
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[22:45:04] Retrieved flag from host team1 for flag_id 969655801: FLGf3C28bT6wea1K
+
+[22:47:37] Submitted 1 flags:
+['FLGf3C28bT6wea1K']
+Response:
+[u'correct']
+
+[22:48:32] Exploiting host team1 for flag_id 3063747291
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[22:48:32] Retrieved flag from host team1 for flag_id 3063747291: FLGhdiWKXCuU1GsE
+
+[22:50:45] Submitted 1 flags:
+['FLGhdiWKXCuU1GsE']
+Response:
+[u'correct']
+
+[22:51:40] Exploiting host team1 for flag_id 3080799092
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147
+
+[22:51:40] Retrieved flag from host team1 for flag_id 3080799092: FLGRND57AehaFiit
+
+[22:54:21] Submitted 1 flags:
+['FLGRND57AehaFiit']
+Response:
+[u'correct']
+
+[22:55:16] Exploiting host team1 for flag_id 1850151803
+[x] Connecting to team1:20001 via SSH to 34.223.241.147
+[+] Connecting to team1:20001 via SSH to 34.223.241.147: Done
+[*] Closed remote connection to team1:20001 via SSH connection to 34.223.241.147

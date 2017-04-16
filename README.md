@@ -1,4 +1,4 @@
-# _pctf_
+# pctf
 
 ## Get SSH Login Credentials
 Example using in-class information:
@@ -18,7 +18,7 @@ python get_ssh.py -t 35.161.233.76 -u team1@example.com -p password
     * Statically report calls to unsafe system/library calls such as _printf_, _strcpy_, etc. 
     * Dynamically try to determine unsafe code paths using [angr](https://github.com/angr/angr#readme) and report them.
     * Produce a hardened service, if possible.
-* [**get_ssh.py**](https://github.com/eboderas/pctf/blob/master/get_ssh.py) - **DONE** [@kanak](https://cse545spring17.slack.com/team/kanak)
+* [**get_ssh.py**](https://github.com/eboderas/pctf/blob/master/get_ssh.py) - [@kanak](https://cse545spring17.slack.com/team/kanak)
     * Conveniently generate bash scripts that allow us to ssh into our game vm.
 
 ## Related
