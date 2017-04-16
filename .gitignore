@@ -1,3 +1,6 @@
+# macOS
+.DS_Store
+
 # Logs
 monitor_payload_server/logs
 monitor_payload_server/*.log

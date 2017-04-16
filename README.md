@@ -7,7 +7,7 @@ python get_ssh.py -t 35.161.233.76 -u team1@example.com -p password
 ```
 
 ## Tools
-* **manage_exploits.py** - [@kanak](https://cse545spring17.slack.com/team/kanak), [@eboderas](https://cse545spring17.slack.com/team/eboderas)
+* [**manage_exploits.py**](https://github.com/eboderas/pctf/blob/master/exploits/manage_exploit.py) - [@kanak](https://cse545spring17.slack.com/team/kanak), [@eboderas](https://cse545spring17.slack.com/team/eboderas)
     * Manage custom written exploits and ensure that they are used to exploit their specific services against each host, each tick, and then submit the retrieved flags.
     * Exploits are dynamically loaded in from exploits.py, which is where our custom exploits are generically written given a remote_connection and flag_id to return a flag, possibly using features from [pwntools](https://github.com/Gallopsled/pwntools#readme).
 * **monitor_flag_traffic.py** - [@rang1](https://cse545spring17.slack.com/team/rang1), [@tcrosenk](https://cse545spring17.slack.com/team/tcrosenk), [@mohseen](https://cse545spring17.slack.com/team/mohseen)
