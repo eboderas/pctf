@@ -13,6 +13,31 @@ DEBUG = 0
 countFlag = 0
 flagsArr = ['FLG', 'Note content']  # If we find a string with more flags, add them here
 portArr = []  # Store all the ports here. Not sure
+tSharkDelimiter1 = "Follow: "
+tSharkDelimiter2 = "==================================================================="
+
+
+# this is will run a loop from 0 to countFlag inclusive.
+#  cmd is 'tshark -r pcap -z follow,tcp,ascii,[num]
+# take the output of this and only get the text between all the equals and put into an output
+def getRaw(file):
+    global countFlag, tSharkDelimiter1, tSharkDelimiter2
+    cmd = "touch %s.rawConver" % file
+    subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE) # make sure to create the file first
+    for i in xrange(0, countFlag + 1):
+        cmd = "tshark -r %s.filtered -z follow,tcp,ascii,%d" % (file, i)
+        #print i # DEBUG
+        proc = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
+        output = proc.stdout.read()
+        # http://stackoverflow.com/a/3368991
+        try:
+            start = output.index(tSharkDelimiter1)
+            raw = output[start:]
+            with open("rawConversations", 'a') as fd:
+                fd.write(raw)
+
+        except ValueError:
+            return ""
 
 
 def getConversations(file):
@@ -34,10 +59,10 @@ def getPorts(source, file):
     pcap = rdpcap(file)
 
     if DEBUG:
-        total=0
+        total = 0
     for pkt in pcap:
         if DEBUG:
-            total+=1
+            total += 1
         if pkt[IP].src == source and Raw in pkt:
             # look for any flags leaving our source ip and make sure the packet has RAW layer
             if DEBUG:
@@ -50,6 +75,7 @@ def getPorts(source, file):
 
     if DEBUG:
         print "%d total packets" % total
+
 
 def main():
     global countFlag
@@ -65,6 +91,8 @@ def main():
     print "There were %d flags sent out" % countFlag
     print "Now getting the conversations"
     getConversations(file)
+    print "Now extracting conversations"
+    getRaw(file)
 
 
 if __name__ == '__main__':
