@@ -5,6 +5,11 @@
 # 1) main() get arguments
 # 2) getPorts() get all the ports that were used to retrieve our flag from the service
 # 3) getConversations() from the list of ports, compare the src and dst to filter all the tcp conversations and write to file
+# 4) getRaw(). from the total number of flags sent out, read the filtered pcap using tshark
+#       the total number of flags sent are equal to conversations
+#       tshark will then extract the conversation
+# 5) python will then extract just the last part, which is raw payload, and place into a file.
+#     we can extend this by taking "raw" variable and inserting into a database
 
 from scapy.all import *
 import argparse
@@ -14,14 +19,13 @@ countFlag = 0
 flagsArr = ['FLG', 'Note content']  # If we find a string with more flags, add them here
 portArr = []  # Store all the ports here. Not sure
 tSharkDelimiter1 = "Follow: "
-tSharkDelimiter2 = "==================================================================="
 
 
 # this is will run a loop from 0 to countFlag inclusive.
 #  cmd is 'tshark -r pcap -z follow,tcp,ascii,[num]
 # take the output of this and only get the text between all the equals and put into an output
 def getRaw(file):
-    global countFlag, tSharkDelimiter1, tSharkDelimiter2
+    global countFlag, tSharkDelimiter1
     cmd = "touch %s.rawConver" % file
     subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE) # make sure to create the file first
     for i in xrange(0, countFlag + 1):
