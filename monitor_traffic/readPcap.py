@@ -12,12 +12,13 @@
 #     we can extend this by taking "raw" variable and inserting into a database
 
 from scapy.all import *
-import argparse
+import argparse, re
 
 DEBUG = 0
 countFlag = 0
 flagsArr = ['FLG', 'Note content']  # If we find a string with more flags, add them here
 portArr = []  # Store all the ports here. Not sure
+serviceArr = [20001, 20002, 20003] #store all service ports here. to be compared when sending to database
 tSharkDelimiter1 = "Follow: "
 
 
@@ -27,16 +28,25 @@ tSharkDelimiter1 = "Follow: "
 def getRaw(file):
     global countFlag, tSharkDelimiter1
     cmd = "touch %s.rawConver" % file
-    subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE) # make sure to create the file first
+    subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)  # make sure to create the file first
+
+    regex = re.compile(r":([0-9]+)")
+
+
     for i in xrange(0, countFlag + 1):
         cmd = "tshark -r %s.filtered -z follow,tcp,ascii,%d" % (file, i)
-        #print i # DEBUG
+        # print i # DEBUG
         proc = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
         output = proc.stdout.read()
         # http://stackoverflow.com/a/3368991
         try:
             start = output.index(tSharkDelimiter1)
             raw = output[start:]
+            # run regex on raw, get ports
+            resultPorts = regex.search(raw)
+            
+            # if port 0 is IN serviceArr, mark that as dst for database
+            # else, mark as src.
             with open("rawConversations", 'a') as fd:
                 fd.write(raw)
 
