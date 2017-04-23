@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+
 
 # rang1
 
@@ -30,7 +30,7 @@ def getRaw(file):
     cmd = "touch %s.rawConver" % file
     subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)  # make sure to create the file first
 
-    regex = re.compile(r":([0-9]+)")
+    regex = re.compile(r":([\d]+)")
 
 
     for i in xrange(0, countFlag + 1):
@@ -43,8 +43,7 @@ def getRaw(file):
             start = output.index(tSharkDelimiter1)
             raw = output[start:]
             # run regex on raw, get ports
-            resultPorts = regex.search(raw)
-            
+            resultPorts = regex.findall(raw)
             # if port 0 is IN serviceArr, mark that as dst for database
             # else, mark as src.
             with open("rawConversations", 'a') as fd:
@@ -104,7 +103,7 @@ def main():
     getPorts(source, file)
     print "There were %d flags sent out" % countFlag
     print "Now getting the conversations"
-    getConversations(file)
+    #getConversations(file)
     print "Now extracting conversations"
     getRaw(file)
 
