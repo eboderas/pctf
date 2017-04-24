@@ -29,8 +29,6 @@ if [ -z "$WORKON_HOME" ] ; then
 fi
 
 if [ -z "$(workon)" ]; then
-	PATH="$HOME/.local/bin:$PATH"
-	export PATH
 	mkvirtualenv angr # creates angr environment
 fi
 

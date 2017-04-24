@@ -1,0 +1,48 @@
+#! /bin/bash
+
+# This scripts assumes your using bash for your shell
+
+#The ANGR team highly recommends using a python virtual environment #because several of the required libraries use native code that are #forked from the originals and you wouldn’t want to overwrite the #original with the ones ANGR users.
+
+pip install virtualenvwrapper
+if [-z "$WORKON_HOME"]; then
+	printf "# ========== [ Adding for virtualEnvWrapper ] =========\n" >> ~/.bashrc
+	echo "export WORKON_HOME=~/Envs" >> ~/.bashrc
+	export WORKON_HOME=~/Envs
+
+	printf "using default WORKON_HOME, where the virtual envs live\n"
+	echo "export PROJECT_HOME=~/ws" >> ~/.bashrc
+	export PROJECT_HOME=~/ws
+
+	printf "using default PROJECT_HOME, where your development projects live\n"
+	echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.bashrc
+	source /usr/local/bin/virtualenvwrapper.sh
+	printf "# ========== [ END for virtualEnvWrapper ] =========\n" >> ~/.bashrc
+
+	mkdir $WORKON_HOME
+fi
+
+envscreated=
+
+if [-z $(workon)]
+	mkvirtualenv angr # creates angr environment
+
+printf "\nCOMMAND:\033[32m workon angr \033[0m -- will enable the angr environment\n"
+printf "\nCOMMAND:\033[32m deactivate \033[0m -- disables the angr environment\n"
+
+source $WORKON_HOME/angr/bin/activate #we are now in the angr virtual environment
+
+if [-z $VIRTUAL_ENV] :
+	printf "\n\033[31m ERROR: not connected to virtual env, stopping script.\n"
+	exit 201
+
+
+
+
+
+
+
+
+
+
+
