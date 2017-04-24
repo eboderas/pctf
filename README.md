@@ -19,7 +19,7 @@ pip install -r requirements.txt
 * **monitor_flag_traffic** - [@rang1](https://cse545spring17.slack.com/team/rang1), [@tcrosenk](https://cse545spring17.slack.com/team/tcrosenk), [@mohseen](https://cse545spring17.slack.com/team/mohseen)
     * [**getPcap.bash**](https://github.com/eboderas/pctf/blob/master/monitor_traffic/getPcap.bash) Log all network traffic using tcpdump
     * [**readPcap.py**](https://github.com/eboderas/pctf/blob/master/monitor_traffic/readPcap.py) Read packet captures, and log all tcp conversations in which a flag was sent out using [scapy](https://github.com/secdev/scapy#readme)
-    * **Also stores tcp conversations in a database, not just files
+    * Also stores tcp conversations in a database, not just files
     * Perform analysis on these conversations to identify those that are unique in order to quickly reverse engineer exploits sent at us.
 * **analyze_service.py** - [@vc0622](https://cse545spring17.slack.com/team/vc0622), [@lzbaer](https://cse545spring17.slack.com/team/lzbaer), [@eboderas](https://cse545spring17.slack.com/team/eboderas)
     * Analyze a service for potential vulnerabilities both statically and dynamically.
