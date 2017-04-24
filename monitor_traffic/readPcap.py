@@ -6,8 +6,8 @@
 # 4) getRaw(). from the total number of flags sent out, read the filtered pcap using tshark
 #       the total number of flags sent are equal to conversations
 #       tshark will then extract the conversation
-# 5) python will then extract just the last part, which is raw payload, and place into a file.
-#     we can extend this by taking "raw" variable and inserting into a database
+# 4.1) python will then extract tshark's output
+# 4.2) send src_port, dst_port, timestamp, raw, and raw length to database
 import psycopg2 as psycopg2
 from scapy.all import *
 from datetime import datetime
@@ -20,7 +20,7 @@ flagsArr = ['FLG', 'Note content']  # If we find a string with more flags, add t
 portArr = []  # Store all the ports here. Not sure
 serviceArr = [20001, 20002, 20003]  # store all service ports here. to be compared when sending to database
 tSharkDelimiter1 = "Follow: "
-dateTimeFormat = '%Y-%m-%d %H:%M:%S'
+dateTimeFormat = '%Y-%m-%d %H:%M:%S.%f'
 
 
 # this is will run a loop from 0 to countFlag inclusive.
@@ -157,7 +157,6 @@ def main():
     file = args['pcap']
 
     getPorts(source, file)
-    # countFlag = 126
     print "There were %d flags sent out" % countFlag
     print "Now getting the conversations"
     getConversations(file)
