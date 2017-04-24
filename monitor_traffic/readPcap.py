@@ -1,5 +1,3 @@
-
-
 # rang1
 
 # 1) main() get arguments
@@ -10,16 +8,19 @@
 #       tshark will then extract the conversation
 # 5) python will then extract just the last part, which is raw payload, and place into a file.
 #     we can extend this by taking "raw" variable and inserting into a database
-
+import psycopg2 as psycopg2
 from scapy.all import *
+from datetime import datetime
+
 import argparse, re
 
 DEBUG = 0
 countFlag = 0
 flagsArr = ['FLG', 'Note content']  # If we find a string with more flags, add them here
 portArr = []  # Store all the ports here. Not sure
-serviceArr = [20001, 20002, 20003] #store all service ports here. to be compared when sending to database
+serviceArr = [20001, 20002, 20003]  # store all service ports here. to be compared when sending to database
 tSharkDelimiter1 = "Follow: "
+dateTimeFormat = '%Y-%m-%d %H:%M:%S'
 
 
 # this is will run a loop from 0 to countFlag inclusive.
@@ -27,11 +28,12 @@ tSharkDelimiter1 = "Follow: "
 # take the output of this and only get the text between all the equals and put into an output
 def getRaw(file):
     global countFlag, tSharkDelimiter1
-    cmd = "touch %s.rawConver" % file
+    outFile = "%s.rawConver" % file
+    cmd = "touch %s" % outFile
     subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)  # make sure to create the file first
 
     regex = re.compile(r":([\d]+)")
-
+    postgres = dbClientHandler()
 
     for i in xrange(0, countFlag + 1):
         cmd = "tshark -r %s.filtered -z follow,tcp,ascii,%d" % (file, i)
@@ -42,15 +44,45 @@ def getRaw(file):
         try:
             start = output.index(tSharkDelimiter1)
             raw = output[start:]
+
             # run regex on raw, get ports
+            # --------------------
             resultPorts = regex.findall(raw)
             # if port 0 is IN serviceArr, mark that as dst for database
             # else, mark as src.
-            with open("rawConversations", 'a') as fd:
+            port0 = int(resultPorts[0])
+            if port0 in serviceArr:
+                dst = port0
+                src = int(resultPorts[1])
+            else:
+                dst = int(resultPorts[1])
+                src = port0
+            # --------------------
+
+            # build time
+            time = datetime.now().strftime(dateTimeFormat)
+
+            # get raw payload
+            # --------------------
+            listNewLine = find(raw, '\n')
+            payload = raw[listNewLine[4]:listNewLine[-2]]
+            lengthPay = listNewLine[-2] - listNewLine[4]
+
+            # prepare query
+            query = "INSERT INTO payloads(src_port, dst_port, timestamp, payload,length) " \
+                    "VALUES (%d,%d,'%s','%s',%d);" % (src, dst, time, payload, lengthPay)
+
+            if dst != 0:
+                # only insert query if the dst is NOT 0, which means off by one error
+                postgres.execute(query)
+
+            with open(outFile, 'a') as fd:
                 fd.write(raw)
 
         except ValueError:
             return ""
+
+    print "Look for %s file" % outFile
 
 
 def getConversations(file):
@@ -76,6 +108,8 @@ def getPorts(source, file):
     for pkt in pcap:
         if DEBUG:
             total += 1
+            print "[DEBUG] \n" + str(pkt.summary)
+
         if pkt[IP].src == source and Raw in pkt:
             # look for any flags leaving our source ip and make sure the packet has RAW layer
             if DEBUG:
@@ -90,6 +124,28 @@ def getPorts(source, file):
         print "%d total packets" % total
 
 
+# http://stackoverflow.com/a/11122355
+# Gets a list of occurrences of the character 'ch' in string 's'
+def find(s, ch):
+    return [i for i, ltr in enumerate(s) if ltr == ch]
+
+
+def dbClientHandler():
+    '''
+    :return: db handler
+    '''
+    try:
+        conn = psycopg2.connect(
+            "dbname='dau3slm4jue1qn' user='viicslnyyexdxx' host='ec2-54-221-254-72.compute-1.amazonaws.com' password='301287f0b3bbdffd7fe9684487ebb483b11d0e608f7432500c2d508afa99e140'")
+        conn.autocommit = True
+
+        cur = conn.cursor()
+
+        return cur
+    except Exception as e:
+        print 'Unable to connect to database...' + e.message
+
+
 def main():
     global countFlag
 
@@ -101,9 +157,10 @@ def main():
     file = args['pcap']
 
     getPorts(source, file)
+    # countFlag = 126
     print "There were %d flags sent out" % countFlag
     print "Now getting the conversations"
-    #getConversations(file)
+    getConversations(file)
     print "Now extracting conversations"
     getRaw(file)
 
