@@ -39,5 +39,5 @@ monitor_payload_server/.npm
 # Optional REPL history
 monitor_payload_server/.node_repl_history
 
-node_modules
-monitor_payload_server/.DS_Store
+monitor_payload_server/node_modules
+.DS_Store
