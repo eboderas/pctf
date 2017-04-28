@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha",
+    "test:windows": "node_modules\\mocha\\bin\\mocha",
     "express": "node server.js --port=9001"
   },
   "repository": {
