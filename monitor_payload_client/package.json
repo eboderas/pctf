@@ -25,6 +25,7 @@
     "@types/react-dom": "^0.14.23",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-google-charts": "^1.5.4-alpha.1",
     "typescript": "^2.2.2"
   },
   "devDependencies": {
