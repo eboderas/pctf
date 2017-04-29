@@ -9,10 +9,14 @@ Browsers Supported Chrome (v40+), Firefox (v41+)
 | npm     | v4.0.5      |   [download](https://nodejs.org/en/) |
 | Chrome | v40+      |    [download](https://www.google.com/chrome/browser/desktop/) |
 
+# Install
+```
+npm install
+```
+
 # Build
 MacOS or Linux based OS
 ```
-npm install
 npm run build
 ```
 Windows
