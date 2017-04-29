@@ -21,23 +21,23 @@ app.get( '/', ( request, response ) => {
 app.post( '/main', ( request, response ) => {
 	console.log( request.body );
 	//if valid json
-	pool.connect((err, client, done) => {
-		if(err)
-			return(console.log(`Error fethching client from pool ${err}`));
-		//query here
-		client.query( queryBuilder( request.body ), (err, result) => {
-				done(err);
+	// pool.connect((err, client, done) => {
+	// 	if(err)
+	// 		return(console.log(`Error fethching client from pool ${err}`));
+	// 	//query here
+	// 	client.query( queryBuilder( request.body ), (err, result) => {
+	// 			done(err);
 
-				if(err)
-					console.log(`error running query ${err}`);
+	// 			if(err)
+	// 				console.log(`error running query ${err}`);
 
-				console.log(result.rows);
+	// 			console.log(result.rows);
 
-				response.json( {
-					data: result.rows
-				} );
-		} );
-	});
+	// 			response.json( {
+	// 				data: result.rows
+	// 			} );
+	// 	} );
+	// });
 } );
 
 app.listen( app.get( 'port' ), () => {

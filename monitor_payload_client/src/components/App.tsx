@@ -3,6 +3,7 @@ import * as React from "react";
 import { DSTHistogram, HistogramProps } from "./DSTHistogram"
 import { PayloadHistogram } from "./PayloadHistogram"
 import { Results } from "./Results"
+import axios = require( 'axios' );
 
 const dstHistProps: HistogramProps = {
     chartType: "Histogram",
@@ -95,6 +96,14 @@ export class App extends React.Component<undefined, undefined> {
         this.state = {
             results: [ 'Select Port or Payload Length to view data' ]
         };
+
+        axios.post( '/main' )
+            .then( ( response: any ) => {
+                console.log( 'Response: ', response );
+            } )
+            .catch( ( error: any ) => {
+                console.log( 'Error: ', error );
+            } );
     }
     render() {
         return(
