@@ -50,7 +50,7 @@ const dstHistProps: HistogramProps = {
 const payloadHistProps: HistogramProps = {
     chartType: "Histogram",
     data: [
-    ["Destination Port", "Frequency"],
+    ["Payload Length", "Frequency"],
     ["249", 8],
     ["125", 93],
     ["169", 105],
@@ -94,31 +94,65 @@ export class App extends React.Component<undefined, undefined> {
     constructor( props: any ){
         super( props );
         this.state = {
+            type: "init",
             results: [ 'Select Port or Payload Length to view data' ]
         };
 
-        axios.post( '/main' )
-            .then( ( response: any ) => {
-                console.log( 'Response: ', response );
-            } )
-            .catch( ( error: any ) => {
-                console.log( 'Error: ', error );
-            } );
+        axios({
+            method: 'post',
+            url: 'https://pctf.herokuapp.com/main',
+            data: {
+                test: "Hello Heroku!"
+            }
+        }).then( ( response: any ) => {
+            console.log( 'Response: ', response );
+        } ).catch( ( error: any ) => {
+            console.log( 'Request Error: ', error );
+        } );
     }
     render() {
         return(
             <div>
-                <DSTHistogram chartType={ dstHistProps.chartType } data={ dstHistProps.data } options={ dstHistProps.options } width={ dstHistProps.width } results={ this.state.results } update={ this.update.bind( this ) } />
-                <PayloadHistogram chartType={ payloadHistProps.chartType } data={ payloadHistProps.data } options={ payloadHistProps.options } width={ payloadHistProps.width } results={ this.state.results } update={ this.update.bind( this ) } />
+                <DSTHistogram chartType={ dstHistProps.chartType } data={ dstHistProps.data } options={ dstHistProps.options } width={ dstHistProps.width } results={ this.state.results } update={ this.updateDST.bind( this ) } />
+                <PayloadHistogram chartType={ payloadHistProps.chartType } data={ payloadHistProps.data } options={ payloadHistProps.options } width={ payloadHistProps.width } results={ this.state.results } update={ this.updatePayload.bind( this ) } />
                 <Results results={ this.state.results } />
             </div> 
         );
     }
-    update( data: any ): void{
+    updateDST( data: any ): void{
         console.log( 'Parent Data :', data );
         // console.log( 'state :', {this.state} );
         this.setState({
+            type: "dst",
             results: [ data[0] ]
         });
+
+        axios({
+            method: 'post',
+            url: 'https://pctf.herokuapp.com/dst',
+            data: this.state
+        }).then( ( response: any ) => {
+            console.log( 'Response: ', response );
+        } ).catch( ( error: any ) => {
+            console.log( 'Request Error: ', error );
+        } );
+    }
+    updatePayload( data: any ): void{
+        console.log( 'Parent Data :', data );
+        // console.log( 'state :', {this.state} );
+        this.setState({
+            type: "payload",
+            results: [ data[0] ]
+        });
+
+        axios({
+            method: 'post',
+            url: 'https://pctf.herokuapp.com/payload',
+            data: this.state
+        }).then( ( response: any ) => {
+            console.log( 'Response: ', response );
+        } ).catch( ( error: any ) => {
+            console.log( 'Request Error: ', error );
+        } );
     }
 }
