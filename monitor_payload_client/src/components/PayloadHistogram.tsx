@@ -1,18 +1,9 @@
 import * as React from "react";
 import { render } from 'react-dom';
 import { Chart } from 'react-google-charts';
+import { HistogramProps } from './DSTHistogram';
 
-export interface HistogramProps {
-	chartType: string;
-	data: Array<any>;
-	options?: any;
-	width?: string;
-	chartEvents?: any;
-	results?: any;
-	update? : any;
-}
-
-export class DSTHistogram extends React.Component <HistogramProps, undefined> {
+export class PayloadHistogram extends React.Component <HistogramProps, undefined> {
 	chartEvents: any;
 	data: any;
 	constructor(props: any){
@@ -35,18 +26,18 @@ export class DSTHistogram extends React.Component <HistogramProps, undefined> {
 	}
 	render() {
 		return (
-		<div className={'my-pretty-chart-container'}>
-			<Chart
-			chartType={this.props.chartType}
-			data={this.props.data}
-			options={this.props.options}
-			graph_id="dst-histogram"
-			width={this.props.width}
-			height="400px"
-			legend_toggle
-			chartEvents={this.chartEvents}
-			/>
-		</div>
+			<div className={'my-pretty-chart-container'}>
+				<Chart
+				chartType={this.props.chartType}
+				data={this.props.data}
+				options={this.props.options}
+				graph_id="payload-histogram"
+				width={this.props.width}
+				height="400px"
+				legend_toggle
+				chartEvents={this.chartEvents}
+				/>
+			</div>
 		);
 	}
 }

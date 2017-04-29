@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -82,7 +82,7 @@ module.exports = React;
  * Expose `debug()` as the module.
  */
 
-exports = module.exports = __webpack_require__(6);
+exports = module.exports = __webpack_require__(10);
 exports.log = log;
 exports.formatArgs = formatArgs;
 exports.save = save;
@@ -460,6 +460,24 @@ process.umask = function() { return 0; };
 
 "use strict";
 
+
+exports.__esModule = true;
+
+var _Chart = __webpack_require__(13);
+
+var _Chart2 = _interopRequireDefault(_Chart);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = { Chart: _Chart2.default };
+module.exports = exports['default'];
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -472,37 +490,9 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(0);
-var react_google_charts_1 = __webpack_require__(12);
-var DSTHistogram = (function (_super) {
-    __extends(DSTHistogram, _super);
-    function DSTHistogram() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    DSTHistogram.prototype.render = function () {
-        return (React.createElement("div", { className: 'my-pretty-chart-container' },
-            React.createElement(react_google_charts_1.Chart, { chartType: this.props.chartType, data: this.props.data, options: this.props.options, graph_id: "dst-histogram", width: this.props.width, height: "400px", legend_toggle: true })));
-    };
-    return DSTHistogram;
-}(React.Component));
-exports.DSTHistogram = DSTHistogram;
-
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-module.exports = ReactDOM;
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(0);
-var ReactDOM = __webpack_require__(4);
-var DSTHistogram_1 = __webpack_require__(3);
+var DSTHistogram_1 = __webpack_require__(6);
+var PayloadHistogram_1 = __webpack_require__(7);
+var Results_1 = __webpack_require__(8);
 var dstHistProps = {
     chartType: "Histogram",
     data: [
@@ -544,15 +534,233 @@ var dstHistProps = {
     },
     width: "100%"
 };
-// ReactDOM.render(
-//     <App compiler="TypeScript" framework="React" />,
-//     document.getElementById( "app" )
-// );
-ReactDOM.render(React.createElement(DSTHistogram_1.DSTHistogram, { chartType: dstHistProps.chartType, data: dstHistProps.data, options: dstHistProps.options, width: dstHistProps.width }), document.getElementById('app'));
+var payloadHistProps = {
+    chartType: "Histogram",
+    data: [
+        ["Destination Port", "Frequency"],
+        ["249", 8],
+        ["125", 93],
+        ["169", 105],
+        ["285", 50],
+        ["102", 14],
+        ["181", 3],
+        ["145", 56],
+        ["221", 1],
+        ["147", 24],
+        ["299", 1],
+        ["119", 52],
+        ["216", 147],
+        ["206", 53],
+        ["143", 80],
+        ["256", 2],
+        ["177", 12],
+        ["277", 77],
+        ["179", 62],
+        ["254", 111],
+        ["135", 96],
+        ["182", 50],
+        ["205", 148],
+        ["140", 3],
+        ["289", 73],
+        ["161", 25],
+        ["111", 25],
+        ["219", 2],
+        [107, 150]
+    ],
+    options: {
+        "title": "Frequency of Payload Length",
+        "histogram": {
+            maxNumBuckets: 40
+        }
+    },
+    width: "100%"
+};
+var App = (function (_super) {
+    __extends(App, _super);
+    function App(props) {
+        var _this = _super.call(this, props) || this;
+        _this.state = {
+            results: ['Select Port or Payload Length to view data']
+        };
+        return _this;
+    }
+    App.prototype.render = function () {
+        return (React.createElement("div", null,
+            React.createElement(DSTHistogram_1.DSTHistogram, { chartType: dstHistProps.chartType, data: dstHistProps.data, options: dstHistProps.options, width: dstHistProps.width, results: this.state.results, update: this.update.bind(this) }),
+            React.createElement(PayloadHistogram_1.PayloadHistogram, { chartType: payloadHistProps.chartType, data: payloadHistProps.data, options: payloadHistProps.options, width: payloadHistProps.width, results: this.state.results, update: this.update.bind(this) }),
+            React.createElement(Results_1.Results, { results: this.state.results })));
+    };
+    App.prototype.update = function (data) {
+        console.log('Parent Data :', data);
+        // console.log( 'state :', {this.state} );
+        this.setState({
+            results: [data[0]]
+        });
+    };
+    return App;
+}(React.Component));
+exports.App = App;
 
 
 /***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+module.exports = ReactDOM;
+
+/***/ }),
 /* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(0);
+var react_google_charts_1 = __webpack_require__(3);
+var DSTHistogram = (function (_super) {
+    __extends(DSTHistogram, _super);
+    function DSTHistogram(props) {
+        var _this = _super.call(this, props) || this;
+        // this.data = this.props.data;
+        _this.chartEvents = [
+            {
+                eventName: 'select',
+                callback: function (Chart) {
+                    // Returns Chart so you can access props and  the ChartWrapper object from chart.wrapper
+                    var selectedItem = Chart.chart.getSelection()[0];
+                    console.log('Selected ', selectedItem);
+                    console.log('Data :', props.data[selectedItem.row + 1]);
+                    // console.log('Data :', this.data.getValue(selectedItem.row, selectedItem.column));
+                    // props.results.push( props.data[ selectedItem.row + 1 ] );
+                    // console.log(  )
+                    props.update(props.data[selectedItem.row + 1]);
+                },
+            }
+        ];
+        return _this;
+    }
+    DSTHistogram.prototype.render = function () {
+        return (React.createElement("div", { className: 'my-pretty-chart-container' },
+            React.createElement(react_google_charts_1.Chart, { chartType: this.props.chartType, data: this.props.data, options: this.props.options, graph_id: "dst-histogram", width: this.props.width, height: "400px", legend_toggle: true, chartEvents: this.chartEvents })));
+    };
+    return DSTHistogram;
+}(React.Component));
+exports.DSTHistogram = DSTHistogram;
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(0);
+var react_google_charts_1 = __webpack_require__(3);
+var PayloadHistogram = (function (_super) {
+    __extends(PayloadHistogram, _super);
+    function PayloadHistogram(props) {
+        var _this = _super.call(this, props) || this;
+        // this.data = this.props.data;
+        _this.chartEvents = [
+            {
+                eventName: 'select',
+                callback: function (Chart) {
+                    // Returns Chart so you can access props and  the ChartWrapper object from chart.wrapper
+                    var selectedItem = Chart.chart.getSelection()[0];
+                    console.log('Selected ', selectedItem);
+                    console.log('Data :', props.data[selectedItem.row + 1]);
+                    // console.log('Data :', this.data.getValue(selectedItem.row, selectedItem.column));
+                    // props.results.push( props.data[ selectedItem.row + 1 ] );
+                    // console.log(  )
+                    props.update(props.data[selectedItem.row + 1]);
+                },
+            }
+        ];
+        return _this;
+    }
+    PayloadHistogram.prototype.render = function () {
+        return (React.createElement("div", { className: 'my-pretty-chart-container' },
+            React.createElement(react_google_charts_1.Chart, { chartType: this.props.chartType, data: this.props.data, options: this.props.options, graph_id: "payload-histogram", width: this.props.width, height: "400px", legend_toggle: true, chartEvents: this.chartEvents })));
+    };
+    return PayloadHistogram;
+}(React.Component));
+exports.PayloadHistogram = PayloadHistogram;
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(0);
+;
+var Results = (function (_super) {
+    __extends(Results, _super);
+    function Results(props) {
+        var _this = _super.call(this, props) || this;
+        _this.state = {
+            results: props.results
+        };
+        return _this;
+    }
+    Results.prototype.render = function () {
+        return (React.createElement("div", { className: "results-wrapper" }, this.props.results.map(function (val, i) {
+            return React.createElement("span", { key: i }, val);
+        })));
+    };
+    return Results;
+}(React.Component));
+exports.Results = Results;
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(0);
+var ReactDOM = __webpack_require__(5);
+var App_1 = __webpack_require__(4);
+ReactDOM.render(React.createElement(App_1.App, null), document.getElementById('app'));
+
+
+/***/ }),
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -568,7 +776,7 @@ exports.coerce = coerce;
 exports.disable = disable;
 exports.enable = enable;
 exports.enabled = enabled;
-exports.humanize = __webpack_require__(8);
+exports.humanize = __webpack_require__(12);
 
 /**
  * The currently active debug mode names, and names to skip.
@@ -760,7 +968,7 @@ function coerce(val) {
 
 
 /***/ }),
-/* 7 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function(root, factory) {
@@ -1044,7 +1252,7 @@ return loadjs;
 
 
 /***/ }),
-/* 8 */
+/* 12 */
 /***/ (function(module, exports) {
 
 /**
@@ -1199,7 +1407,7 @@ function plural(ms, n, name) {
 
 
 /***/ }),
-/* 9 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1216,11 +1424,11 @@ var _debug = __webpack_require__(1);
 
 var _debug2 = _interopRequireDefault(_debug);
 
-var _DEFAULT_CHART_COLORS = __webpack_require__(11);
+var _DEFAULT_CHART_COLORS = __webpack_require__(15);
 
 var _DEFAULT_CHART_COLORS2 = _interopRequireDefault(_DEFAULT_CHART_COLORS);
 
-var _GoogleChartLoader = __webpack_require__(10);
+var _GoogleChartLoader = __webpack_require__(14);
 
 var _GoogleChartLoader2 = _interopRequireDefault(_GoogleChartLoader);
 
@@ -1688,7 +1896,7 @@ module.exports = exports['default'];
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 10 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1706,7 +1914,7 @@ var debug = new _debug2.default('react-google-charts:GoogleChartLoader'); // Goo
 
 // Based on http://blog.arkency.com/2014/09/react-dot-js-and-google-charts/
 
-var script = typeof window !== 'undefined' ? __webpack_require__(7) : function (link, _ref) {
+var script = typeof window !== 'undefined' ? __webpack_require__(11) : function (link, _ref) {
   var callback = _ref.success;
   return callback();
 };
@@ -1743,7 +1951,7 @@ exports.default = googleChartLoader;
 module.exports = exports['default'];
 
 /***/ }),
-/* 11 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1752,24 +1960,6 @@ module.exports = exports['default'];
 // Taken from http://there4development.com/blog/2012/05/02/google-chart-color-list/
 
 module.exports = ['#3366CC', '#DC3912', '#FF9900', '#109618', '#990099', '#3B3EAC', '#0099C6', '#DD4477', '#66AA00', '#B82E2E', '#316395', '#994499', '#22AA99', '#AAAA11', '#6633CC', '#E67300', '#8B0707', '#329262', '#5574A6', '#3B3EAC'];
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-
-var _Chart = __webpack_require__(9);
-
-var _Chart2 = _interopRequireDefault(_Chart);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = { Chart: _Chart2.default };
-module.exports = exports['default'];
 
 /***/ })
 /******/ ]);
