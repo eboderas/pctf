@@ -1,0 +1,15 @@
+@import 'reset';
+@import 'flex';
+@import 'fonts';
+
+$fonts: 'Helvetica', sans-serif;
+
+body{
+	font-family: $fonts;
+}
+.results-wrapper{
+	@include flexbox;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}

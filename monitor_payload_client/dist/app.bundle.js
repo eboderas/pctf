@@ -1203,7 +1203,7 @@ var dstHistProps = {
         ["59227", 30],
         ["21625", 26],
         ["9560", 30],
-        ["63763", 95],
+        ["20001", 95],
         ["51852", 9],
         ["35315", 54],
         ["42486", 99],
@@ -1247,7 +1247,7 @@ var payloadHistProps = {
         ["254", 111],
         ["135", 96],
         ["182", 50],
-        ["205", 148],
+        ["187", 148],
         ["140", 3],
         ["289", 73],
         ["161", 25],
@@ -1265,61 +1265,155 @@ var payloadHistProps = {
 };
 var App = (function (_super) {
     __extends(App, _super);
+    /**
+     * Creates an instance of App and fetches data for rendering,
+     * fallback to template data
+     * @param {*} props
+     * @memberof App
+     */
     function App(props) {
         var _this = _super.call(this, props) || this;
         _this.state = {
-            type: "init",
-            results: ['Select Port or Payload Length to view data']
+            type: "initDST",
+            results: ['Select Port or Payload Length to view data'],
+            meta: "",
+            dataDST: dstHistProps.data,
+            dataPayload: payloadHistProps.data
         };
+        /**
+         * Fetching the DST data here
+         */
         axios({
             method: 'post',
             url: 'https://pctf.herokuapp.com/main',
             data: {
-                test: "Hello Heroku!"
+                type: "initDST"
             }
         }).then(function (response) {
             console.log('Response: ', response);
+            var dbResults = [["Destination Port", "Frequency"]];
+            response.data.db.forEach(function (row) {
+                dbResults.push([row.dst_port.toString(), row.count]);
+            });
+            console.log('DB Results: ', dbResults);
+            console.log('d: ', dstHistProps.data);
+            _this.setState({
+                type: "dst",
+                results: _this.state.results,
+                meta: _this.state.meta,
+                dataDST: dbResults,
+                dataPayload: _this.state.dataPayload
+            });
+        }).catch(function (error) {
+            console.log('Request Error: ', error);
+        });
+        /**
+         * Fetching Payload data and rendering
+         */
+        axios({
+            method: 'post',
+            url: 'https://pctf.herokuapp.com/main',
+            data: {
+                type: "initPayload"
+            }
+        }).then(function (response) {
+            console.log('Response: ', response);
+            var dbResults = [["Payload Length", "Frequency"]];
+            response.data.db.forEach(function (row) {
+                dbResults.push([row.length.toString(), row.count]);
+            });
+            console.log('DB Results: ', dbResults);
+            _this.setState({
+                type: "dst",
+                results: _this.state.results,
+                meta: _this.state.meta,
+                dataDST: _this.state.dataDST,
+                dataPayload: dbResults
+            });
         }).catch(function (error) {
             console.log('Request Error: ', error);
         });
         return _this;
     }
+    /**
+     * Render React App
+     * @returns
+     * @memberof App
+     */
     App.prototype.render = function () {
         return (React.createElement("div", null,
-            React.createElement(DSTHistogram_1.DSTHistogram, { chartType: dstHistProps.chartType, data: dstHistProps.data, options: dstHistProps.options, width: dstHistProps.width, results: this.state.results, update: this.updateDST.bind(this) }),
-            React.createElement(PayloadHistogram_1.PayloadHistogram, { chartType: payloadHistProps.chartType, data: payloadHistProps.data, options: payloadHistProps.options, width: payloadHistProps.width, results: this.state.results, update: this.updatePayload.bind(this) }),
-            React.createElement(Results_1.Results, { results: this.state.results })));
+            React.createElement(DSTHistogram_1.DSTHistogram, { chartType: dstHistProps.chartType, data: this.state.dataDST, options: dstHistProps.options, width: dstHistProps.width, results: this.state.results, update: this.updateDST.bind(this) }),
+            React.createElement(PayloadHistogram_1.PayloadHistogram, { chartType: payloadHistProps.chartType, data: this.state.dataPayload, options: payloadHistProps.options, width: payloadHistProps.width, results: this.state.results, update: this.updatePayload.bind(this) }),
+            React.createElement(Results_1.Results, { results: this.state.results, title: this.state.type, value: this.state.meta })));
     };
     App.prototype.updateDST = function (data) {
+        var _this = this;
         console.log('Parent Data :', data);
         // console.log( 'state :', {this.state} );
         this.setState({
             type: "dst",
-            results: [data[0]]
+            results: [data[0]],
+            meta: data[0],
+            dataDST: this.state.dataDST,
+            dataPayload: this.state.dataPayload
         });
         axios({
             method: 'post',
             url: 'https://pctf.herokuapp.com/dst',
-            data: this.state
+            data: {
+                type: "dst",
+                results: this.state.results
+            }
         }).then(function (response) {
             console.log('Response: ', response);
+            var dbResults = [];
+            response.data.db.forEach(function (row) {
+                dbResults.push(row.payload);
+            });
+            console.log('DB Results: ', dbResults);
+            _this.setState({
+                type: "dst",
+                results: dbResults,
+                meta: response.data.db[0].dst_port,
+                dataDST: _this.state.dataDST,
+                dataPayload: _this.state.dataPayload
+            });
         }).catch(function (error) {
             console.log('Request Error: ', error);
         });
     };
     App.prototype.updatePayload = function (data) {
+        var _this = this;
         console.log('Parent Data :', data);
         // console.log( 'state :', {this.state} );
         this.setState({
             type: "payload",
-            results: [data[0]]
+            results: [data[0]],
+            meta: data[0],
+            dataDST: this.state.dataDST,
+            dataPayload: this.state.dataPayload
         });
         axios({
             method: 'post',
             url: 'https://pctf.herokuapp.com/payload',
-            data: this.state
+            data: {
+                type: "payload",
+                results: this.state.results
+            }
         }).then(function (response) {
             console.log('Response: ', response);
+            var dbResults = [];
+            response.data.db.forEach(function (row) {
+                dbResults.push(row.payload);
+            });
+            console.log('DB Results: ', dbResults);
+            _this.setState({
+                type: "payload",
+                results: dbResults,
+                meta: response.data.db[0].length,
+                dataDST: _this.state.dataDST,
+                dataPayload: _this.state.dataPayload
+            });
         }).catch(function (error) {
             console.log('Request Error: ', error);
         });
@@ -1459,14 +1553,20 @@ var Results = (function (_super) {
     function Results(props) {
         var _this = _super.call(this, props) || this;
         _this.state = {
-            results: props.results
+            results: props.results,
+            title: props.title,
+            value: props.value
         };
         return _this;
     }
     Results.prototype.render = function () {
-        return (React.createElement("div", { className: "results-wrapper" }, this.props.results.map(function (val, i) {
-            return React.createElement("span", { key: i }, val);
-        })));
+        return (React.createElement("div", { className: "results-wrapper" },
+            React.createElement("div", { className: "title" },
+                React.createElement("span", null, this.props.title),
+                React.createElement("span", null, this.props.value)),
+            this.props.results.map(function (val, i) {
+                return React.createElement("span", { key: i }, val);
+            })));
     };
     return Results;
 }(React.Component));

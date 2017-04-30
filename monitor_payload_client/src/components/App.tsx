@@ -27,7 +27,7 @@ const dstHistProps: HistogramProps = {
     ["59227", 30],
     ["21625", 26],
     ["9560", 30],
-    ["63763", 95],
+    ["20001", 95],
     ["51852", 9],
     ["35315", 54],
     ["42486", 99],
@@ -72,7 +72,7 @@ const payloadHistProps: HistogramProps = {
     ["254", 111],
     ["135", 96],
     ["182", 50],
-    ["205", 148],
+    ["187", 148],
     ["140", 3],
     ["289", 73],
     ["161", 25],
@@ -91,31 +91,93 @@ const payloadHistProps: HistogramProps = {
 
 export class App extends React.Component<undefined, undefined> {
     state: any;
+    /**
+     * Creates an instance of App and fetches data for rendering,
+     * fallback to template data
+     * @param {*} props 
+     * @memberof App
+     */
     constructor( props: any ){
         super( props );
         this.state = {
-            type: "init",
-            results: [ 'Select Port or Payload Length to view data' ]
+            type: "initDST",
+            results: [ 'Select Port or Payload Length to view data' ],
+            meta: "",
+            dataDST: dstHistProps.data,
+            dataPayload: payloadHistProps.data
         };
-
+        /**
+         * Fetching the DST data here
+         */
         axios({
             method: 'post',
             url: 'https://pctf.herokuapp.com/main',
             data: {
-                test: "Hello Heroku!"
+                type: "initDST"
             }
         }).then( ( response: any ) => {
             console.log( 'Response: ', response );
-        } ).catch( ( error: any ) => {
+
+            const dbResults: Array<any> = [ ["Destination Port", "Frequency"] ];
+            response.data.db.forEach( ( row: any ) => {
+                dbResults.push([ row.dst_port.toString(), row.count ]);
+            });
+
+            console.log( 'DB Results: ', dbResults );
+            
+            this.setState({
+                type: "dst",
+                results: this.state.results,
+                meta: this.state.meta,
+                dataDST: dbResults,
+                dataPayload: this.state.dataPayload
+            });
+
+        }).catch( ( error: any ) => {
             console.log( 'Request Error: ', error );
-        } );
+        });
+        /**
+         * Fetching Payload data and rendering
+         */
+        axios({
+            method: 'post',
+            url: 'https://pctf.herokuapp.com/main',
+            data: {
+                type: "initPayload"
+            }
+        }).then( ( response: any ) => {
+            console.log( 'Response: ', response );
+
+            const dbResults: Array<any> = [ ["Payload Length", "Frequency"] ];
+            response.data.db.forEach( ( row: any ) => {
+                dbResults.push([ row.length.toString(), row.count ]);
+            });
+
+            console.log( 'DB Results: ', dbResults );
+
+            this.setState({
+                type: "dst",
+                results: this.state.results,
+                meta: this.state.meta,
+                dataDST: this.state.dataDST,
+                dataPayload: dbResults
+            });
+
+        }).catch( ( error: any ) => {
+            console.log( 'Request Error: ', error );
+        });
     }
+    /**
+     * Render React App
+     * @returns 
+     * @memberof App
+     */
     render() {
         return(
             <div>
-                <DSTHistogram chartType={ dstHistProps.chartType } data={ dstHistProps.data } options={ dstHistProps.options } width={ dstHistProps.width } results={ this.state.results } update={ this.updateDST.bind( this ) } />
-                <PayloadHistogram chartType={ payloadHistProps.chartType } data={ payloadHistProps.data } options={ payloadHistProps.options } width={ payloadHistProps.width } results={ this.state.results } update={ this.updatePayload.bind( this ) } />
-                <Results results={ this.state.results } />
+                <DSTHistogram chartType={ dstHistProps.chartType } data={ this.state.dataDST } options={ dstHistProps.options } width={ dstHistProps.width } results={ this.state.results } update={ this.updateDST.bind( this ) } />
+                <PayloadHistogram chartType={ payloadHistProps.chartType } data={ this.state.dataPayload } options={ payloadHistProps.options } width={ payloadHistProps.width } results={ this.state.results } update={ this.updatePayload.bind( this ) } />
+                <Results results={ this.state.results } title={ this.state.type } value={ this.state.meta } />
             </div> 
         );
     }
@@ -124,15 +186,37 @@ export class App extends React.Component<undefined, undefined> {
         // console.log( 'state :', {this.state} );
         this.setState({
             type: "dst",
-            results: [ data[0] ]
+            results: [ data[0] ],
+            meta: data[0],
+            dataDST: this.state.dataDST,
+            dataPayload: this.state.dataPayload
         });
 
         axios({
             method: 'post',
             url: 'https://pctf.herokuapp.com/dst',
-            data: this.state
+            data: {
+                type: "dst",
+                results: this.state.results
+            }
         }).then( ( response: any ) => {
             console.log( 'Response: ', response );
+
+            const dbResults: Array<any> = [];
+            response.data.db.forEach( ( row: any ) => {
+                dbResults.push(row.payload);
+            });
+
+            console.log( 'DB Results: ', dbResults );
+
+            this.setState({
+                type: "dst",
+                results: dbResults,
+                meta: response.data.db[0].dst_port,
+                dataDST: this.state.dataDST,
+                dataPayload: this.state.dataPayload
+            });
+
         } ).catch( ( error: any ) => {
             console.log( 'Request Error: ', error );
         } );
@@ -142,15 +226,37 @@ export class App extends React.Component<undefined, undefined> {
         // console.log( 'state :', {this.state} );
         this.setState({
             type: "payload",
-            results: [ data[0] ]
+            results: [ data[0] ],
+            meta: data[0],
+            dataDST: this.state.dataDST,
+            dataPayload: this.state.dataPayload
         });
 
         axios({
             method: 'post',
             url: 'https://pctf.herokuapp.com/payload',
-            data: this.state
+            data: {
+                type: "payload",
+                results: this.state.results
+            }
         }).then( ( response: any ) => {
             console.log( 'Response: ', response );
+
+            const dbResults: Array<any> = [];
+            response.data.db.forEach( ( row: any ) => {
+                dbResults.push(row.payload);
+            });
+
+            console.log( 'DB Results: ', dbResults );
+
+            this.setState({
+                type: "payload",
+                results: dbResults,
+                meta: response.data.db[0].length,
+                dataDST: this.state.dataDST,
+                dataPayload: this.state.dataPayload
+            });
+
         } ).catch( ( error: any ) => {
             console.log( 'Request Error: ', error );
         } );
