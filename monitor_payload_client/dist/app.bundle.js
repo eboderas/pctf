@@ -1272,13 +1272,9 @@ var payloadHistProps = {
 var chartEventsUpdate = [{
         eventName: 'select',
         callback: function (Chart) {
-            // console.log( 'state', this.state );
             var selectedItem = Chart.chart.getSelection()[0];
             console.log('Selected ', selectedItem);
             console.log('Data :', this.props.data[selectedItem.row + 1]);
-            // console.log('Data :', this.data.getValue(selectedItem.row, selectedItem.column));
-            // props.results.push( props.data[ selectedItem.row + 1 ] );
-            // console.log(  )
             this.props.update(this.props.data[selectedItem.row + 1]);
         }
     }];
@@ -1299,59 +1295,7 @@ var App = (function (_super) {
             dataDST: dstHistProps.data,
             dataPayload: payloadHistProps.data
         };
-        /**
-         * Fetching the DST data here
-         */
-        axios({
-            method: 'post',
-            url: 'https://pctf.herokuapp.com/main',
-            data: {
-                type: "initDST"
-            }
-        }).then(function (response) {
-            // console.log( 'Response: ', response );
-            var dbResults = [["Destination Port", "Frequency"]];
-            response.data.db.forEach(function (row) {
-                dbResults.push([row.dst_port.toString(), row.count]);
-            });
-            // console.log( 'DB Results: ', dbResults );
-            _this.setState({
-                type: "dst",
-                results: _this.state.results,
-                meta: _this.state.meta,
-                dataDST: dbResults,
-                dataPayload: _this.state.dataPayload
-            });
-        }).catch(function (error) {
-            console.log('Request Error: ', error);
-        });
         return _this;
-        /**
-         * Fetching Payload data and rendering
-         */
-        // axios({
-        //     method: 'post',
-        //     url: 'https://pctf.herokuapp.com/main',
-        //     data: {
-        //         type: "initPayload"
-        //     }
-        // }).then( ( response: any ) => {
-        //     // console.log( 'Response: ', response );
-        //     const dbResults: Array<any> = [ ["Payload Length", "Frequency"] ];
-        //     response.data.db.forEach( ( row: any ) => {
-        //         dbResults.push([ row.length.toString(), row.count ]);
-        //     });
-        //     // console.log( 'DB Results: ', dbResults );
-        //     this.setState({
-        //         type: "dst",
-        //         results: this.state.results,
-        //         meta: this.state.meta,
-        //         dataDST: this.state.dataDST,
-        //         dataPayload: dbResults
-        //     });
-        // }).catch( ( error: any ) => {
-        //     console.log( 'Request Error: ', error );
-        // });
     }
     /**
      * Render React App
@@ -1366,8 +1310,6 @@ var App = (function (_super) {
     };
     App.prototype.updateDST = function (data) {
         var _this = this;
-        // console.log( 'Parent Data :', data );
-        // console.log( 'state :', {this.state} );
         this.setState({
             type: "dst",
             results: [data[0]],
@@ -1383,12 +1325,10 @@ var App = (function (_super) {
                 results: this.state.results
             }
         }).then(function (response) {
-            // console.log( 'Response: ', response );
             var dbResults = [];
             response.data.db.forEach(function (row) {
                 dbResults.push(row.payload);
             });
-            // console.log( 'DB Results: ', dbResults );
             _this.setState({
                 type: "dst",
                 results: dbResults,
@@ -1402,8 +1342,6 @@ var App = (function (_super) {
     };
     App.prototype.updatePayload = function (data) {
         var _this = this;
-        // console.log( 'Parent Data :', data );
-        // console.log( 'state :', {this.state} );
         this.setState({
             type: "payload",
             results: [data[0]],
@@ -1419,12 +1357,10 @@ var App = (function (_super) {
                 results: this.state.results
             }
         }).then(function (response) {
-            // console.log( 'Response: ', response );
             var dbResults = [];
             response.data.db.forEach(function (row) {
                 dbResults.push(row.payload);
             });
-            // console.log( 'DB Results: ', dbResults );
             _this.setState({
                 type: "payload",
                 results: dbResults,

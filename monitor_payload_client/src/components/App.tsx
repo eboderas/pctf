@@ -92,13 +92,11 @@ const payloadHistProps: HistogramProps = {
 let chartEventsUpdate = [{
     eventName: 'select',
     callback(Chart: any) {
-        // console.log( 'state', this.state );
+
         let selectedItem = Chart.chart.getSelection()[0];
         console.log( 'Selected ', selectedItem );
         console.log( 'Data :', this.props.data[ selectedItem.row + 1 ] );
-        // console.log('Data :', this.data.getValue(selectedItem.row, selectedItem.column));
-        // props.results.push( props.data[ selectedItem.row + 1 ] );
-        // console.log(  )
+
         this.props.update( this.props.data[ selectedItem.row + 1 ] );
     }
 }];
@@ -120,67 +118,6 @@ export class App extends React.Component<undefined, undefined> {
             dataDST: dstHistProps.data,
             dataPayload: payloadHistProps.data
         };
-        /**
-         * Fetching the DST data here
-         */
-        axios({
-            method: 'post',
-            url: 'https://pctf.herokuapp.com/main',
-            data: {
-                type: "initDST"
-            }
-        }).then( ( response: any ) => {
-            // console.log( 'Response: ', response );
-
-            const dbResults: Array<any> = [ ["Destination Port", "Frequency"] ];
-            response.data.db.forEach( ( row: any ) => {
-                dbResults.push([ row.dst_port.toString(), row.count ]);
-            });
-
-            // console.log( 'DB Results: ', dbResults );
-            
-            this.setState({
-                type: "dst",
-                results: this.state.results,
-                meta: this.state.meta,
-                dataDST: dbResults,
-                dataPayload: this.state.dataPayload
-            });
-
-        }).catch( ( error: any ) => {
-            console.log( 'Request Error: ', error );
-        });
-
-        /**
-         * Fetching Payload data and rendering
-         */
-        // axios({
-        //     method: 'post',
-        //     url: 'https://pctf.herokuapp.com/main',
-        //     data: {
-        //         type: "initPayload"
-        //     }
-        // }).then( ( response: any ) => {
-        //     // console.log( 'Response: ', response );
-
-        //     const dbResults: Array<any> = [ ["Payload Length", "Frequency"] ];
-        //     response.data.db.forEach( ( row: any ) => {
-        //         dbResults.push([ row.length.toString(), row.count ]);
-        //     });
-
-        //     // console.log( 'DB Results: ', dbResults );
-
-        //     this.setState({
-        //         type: "dst",
-        //         results: this.state.results,
-        //         meta: this.state.meta,
-        //         dataDST: this.state.dataDST,
-        //         dataPayload: dbResults
-        //     });
-
-        // }).catch( ( error: any ) => {
-        //     console.log( 'Request Error: ', error );
-        // });
     }
     /**
      * Render React App
@@ -199,8 +136,6 @@ export class App extends React.Component<undefined, undefined> {
         );
     }
     updateDST( data: any ): void{
-        // console.log( 'Parent Data :', data );
-        // console.log( 'state :', {this.state} );
         this.setState({
             type: "dst",
             results: [ data[0] ],
@@ -217,14 +152,11 @@ export class App extends React.Component<undefined, undefined> {
                 results: this.state.results
             }
         }).then( ( response: any ) => {
-            // console.log( 'Response: ', response );
 
             const dbResults: Array<any> = [];
             response.data.db.forEach( ( row: any ) => {
                 dbResults.push(row.payload);
             });
-
-            // console.log( 'DB Results: ', dbResults );
 
             this.setState({
                 type: "dst",
@@ -239,8 +171,6 @@ export class App extends React.Component<undefined, undefined> {
         } );
     }
     updatePayload( data: any ): void{
-        // console.log( 'Parent Data :', data );
-        // console.log( 'state :', {this.state} );
         this.setState({
             type: "payload",
             results: [ data[0] ],
@@ -257,14 +187,11 @@ export class App extends React.Component<undefined, undefined> {
                 results: this.state.results
             }
         }).then( ( response: any ) => {
-            // console.log( 'Response: ', response );
 
             const dbResults: Array<any> = [];
             response.data.db.forEach( ( row: any ) => {
                 dbResults.push(row.payload);
             });
-
-            // console.log( 'DB Results: ', dbResults );
 
             this.setState({
                 type: "payload",
