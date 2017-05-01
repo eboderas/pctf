@@ -41,8 +41,10 @@ const dstHistProps: HistogramProps = {
     options:{
         "title": "Frequency of ports used",
         "histogram": {
-            maxNumBuckets: 20
-        }
+            // maxNumBuckets: 20
+            bucketSize: 1
+        },
+        colors: ['#BF263C']
     },
     width: "100%"
 }
@@ -83,8 +85,10 @@ const payloadHistProps: HistogramProps = {
     options:{
         "title": "Frequency of Payload Length",
         "histogram": {
-            maxNumBuckets: 40
-        }
+            // maxNumBuckets: 40
+            bucketSize: 1
+        },
+        colors: ['#BF263C']
     },
     width: "100%"
  }
@@ -127,6 +131,7 @@ export class App extends React.Component<undefined, undefined> {
     render() {
         return(
             <div>
+                <div className="main-title"><span>Monitor</span><span>Payload</span></div>
                 <DSTHistogram chartType={ dstHistProps.chartType } options={ dstHistProps.options } width={ dstHistProps.width } results={ this.state.results } update={ this.updateDST.bind( this ) } />
                 {/*<DSTHistogram chartType={ dstHistProps.chartType } data={ this.state.dataDST } options={ dstHistProps.options } width={ dstHistProps.width } results={ this.state.results } update={ this.updateDST.bind( this ) } />*/}
                 {/*<PayloadHistogram chartType={ payloadHistProps.chartType } data={ this.state.dataPayload } options={ payloadHistProps.options } width={ payloadHistProps.width } results={ this.state.results } update={ this.updatePayload.bind( this ) } />*/}
@@ -144,8 +149,8 @@ export class App extends React.Component<undefined, undefined> {
     updateDST( data: any ): void{
         this.setState({
             type: "dst",
-            results: [ data[0] ],
-            meta: data[0],
+            results: [ data[1] ],
+            meta: data[1],
             dataDST: this.state.dataDST,
             dataPayload: this.state.dataPayload
         });
@@ -185,12 +190,12 @@ export class App extends React.Component<undefined, undefined> {
     updatePayload( data: any ): void{
         this.setState({
             type: "payload",
-            results: [ data[0] ],
-            meta: data[0],
+            results: [ data[1] ],
+            meta: data[1],
             dataDST: this.state.dataDST,
             dataPayload: this.state.dataPayload
         });
-
+        
         axios({
             method: 'post',
             url: 'https://pctf.herokuapp.com/payload',

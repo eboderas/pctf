@@ -1223,8 +1223,10 @@ var dstHistProps = {
     options: {
         "title": "Frequency of ports used",
         "histogram": {
-            maxNumBuckets: 20
-        }
+            // maxNumBuckets: 20
+            bucketSize: 1
+        },
+        colors: ['#BF263C']
     },
     width: "100%"
 };
@@ -1264,8 +1266,10 @@ var payloadHistProps = {
     options: {
         "title": "Frequency of Payload Length",
         "histogram": {
-            maxNumBuckets: 40
-        }
+            // maxNumBuckets: 40
+            bucketSize: 1
+        },
+        colors: ['#BF263C']
     },
     width: "100%"
 };
@@ -1304,16 +1308,25 @@ var App = (function (_super) {
      */
     App.prototype.render = function () {
         return (React.createElement("div", null,
+            React.createElement("div", { className: "main-title" },
+                React.createElement("span", null, "Monitor"),
+                React.createElement("span", null, "Payload")),
             React.createElement(DSTHistogram_1.DSTHistogram, { chartType: dstHistProps.chartType, options: dstHistProps.options, width: dstHistProps.width, results: this.state.results, update: this.updateDST.bind(this) }),
             React.createElement(PayloadHistogram_1.PayloadHistogram, { chartType: payloadHistProps.chartType, options: payloadHistProps.options, width: payloadHistProps.width, results: this.state.results, update: this.updatePayload.bind(this) }),
             React.createElement(Results_1.Results, { results: this.state.results, title: this.state.type, value: this.state.meta })));
     };
+    /**
+     * 1) Update Parent state with destination port
+     * 2) AJAX call to server and fetch results
+     * 3) Reload state and re-render affected components
+     * @param data : this will be recieved from the child
+     */
     App.prototype.updateDST = function (data) {
         var _this = this;
         this.setState({
             type: "dst",
-            results: [data[0]],
-            meta: data[0],
+            results: [data[1]],
+            meta: data[1],
             dataDST: this.state.dataDST,
             dataPayload: this.state.dataPayload
         });
@@ -1340,12 +1353,18 @@ var App = (function (_super) {
             console.log('Request Error: ', error);
         });
     };
+    /**
+     * 1) Update Parent state with payload
+     * 2) AJAX call to server and fetch results
+     * 3) Reload state and re-render affected components
+     * @param data : this will be recieved from the child
+     */
     App.prototype.updatePayload = function (data) {
         var _this = this;
         this.setState({
             type: "payload",
-            results: [data[0]],
-            meta: data[0],
+            results: [data[1]],
+            meta: data[1],
             dataDST: this.state.dataDST,
             dataPayload: this.state.dataPayload
         });
@@ -1415,6 +1434,13 @@ var DSTHistogram = (function (_super) {
         }
         return React.createElement("div", null, "Loading...");
     };
+    /**
+     * 1) Make AJAX call and load data
+     * 2) In Promise use data to load state
+     * 3) State change loads new data and re-renders component
+     *
+     * @memberof DSTHistogram
+     */
     DSTHistogram.prototype.componentDidMount = function () {
         var self = this;
         axios({
@@ -1424,10 +1450,9 @@ var DSTHistogram = (function (_super) {
                 type: "initDST"
             }
         }).then(function (response) {
-            var dbResults = [["Destination Port", "Frequency"]];
-            // console.log( 'Response: ', response );
+            var dbResults = [["Frequency", "Destination Port"]];
             response.data.db.forEach(function (row) {
-                dbResults.push([row.dst_port.toString(), row.count]);
+                dbResults.push([row.count, row.dst_port.toString()]);
             });
             self.data = dbResults;
             self.chartEvents = [
@@ -1502,9 +1527,9 @@ var PayloadHistogram = (function (_super) {
                 type: "initPayload"
             }
         }).then(function (response) {
-            var dbResults = [["Payload Length", "Frequency"]];
+            var dbResults = [["Frequency", "Payload Length"]];
             response.data.db.forEach(function (row) {
-                dbResults.push([row.length.toString(), row.count]);
+                dbResults.push([row.count, row.length.toString()]);
             });
             self.data = dbResults;
             self.chartEvents = [
@@ -1566,9 +1591,9 @@ var Results = (function (_super) {
             React.createElement("div", { className: "title" },
                 React.createElement("span", null, this.props.title),
                 React.createElement("span", null, this.props.value)),
-            this.props.results.map(function (val, i) {
+            React.createElement("div", { className: "db-wrapper" }, this.props.results.map(function (val, i) {
                 return React.createElement("span", { key: i }, val);
-            })));
+            }))));
     };
     return Results;
 }(React.Component));

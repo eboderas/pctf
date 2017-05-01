@@ -21,11 +21,13 @@ export class Results extends React.Component<resultProp, resultProp> {
 				<div className="title">
 					<span>{ this.props.title }</span><span>{ this.props.value }</span>
 				</div>
+				<div className="db-wrapper">
 				{
 					this.props.results.map( ( val: any, i: number ) => {
 						return <span key={i}>{val}</span>
 					})
 				}
+				</div>
 			</div>
 		);
     }
