@@ -2,10 +2,11 @@
 @import 'flex';
 @import 'fonts';
 
-$fonts: 'Helvetica', sans-serif;
+$fonts: 'LatoWebMedium','Helvetica', sans-serif;
 
 body{
 	font-family: $fonts;
+	background: #2c3e50;
 }
 .results-wrapper{
 	@include flexbox;
