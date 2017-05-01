@@ -11,6 +11,7 @@ export interface HistogramProps {
 	chartEvents?: any;
 	results?: any;
 	update? : any;
+	colors?: Array<String>
 }
 
 export class DSTHistogram extends React.Component <HistogramProps, undefined> {

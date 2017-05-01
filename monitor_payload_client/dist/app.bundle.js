@@ -1225,7 +1225,8 @@ var dstHistProps = {
         "histogram": {
             // maxNumBuckets: 20
             bucketSize: 1
-        }
+        },
+        colors: ['#BF263C']
     },
     width: "100%"
 };
@@ -1267,7 +1268,8 @@ var payloadHistProps = {
         "histogram": {
             // maxNumBuckets: 40
             bucketSize: 1
-        }
+        },
+        colors: ['#BF263C']
     },
     width: "100%"
 };
@@ -1306,6 +1308,9 @@ var App = (function (_super) {
      */
     App.prototype.render = function () {
         return (React.createElement("div", null,
+            React.createElement("div", { className: "main-title" },
+                React.createElement("span", null, "Monitor"),
+                React.createElement("span", null, "Payload")),
             React.createElement(DSTHistogram_1.DSTHistogram, { chartType: dstHistProps.chartType, options: dstHistProps.options, width: dstHistProps.width, results: this.state.results, update: this.updateDST.bind(this) }),
             React.createElement(PayloadHistogram_1.PayloadHistogram, { chartType: payloadHistProps.chartType, options: payloadHistProps.options, width: payloadHistProps.width, results: this.state.results, update: this.updatePayload.bind(this) }),
             React.createElement(Results_1.Results, { results: this.state.results, title: this.state.type, value: this.state.meta })));
@@ -1586,9 +1591,9 @@ var Results = (function (_super) {
             React.createElement("div", { className: "title" },
                 React.createElement("span", null, this.props.title),
                 React.createElement("span", null, this.props.value)),
-            this.props.results.map(function (val, i) {
+            React.createElement("div", { className: "db-wrapper" }, this.props.results.map(function (val, i) {
                 return React.createElement("span", { key: i }, val);
-            })));
+            }))));
     };
     return Results;
 }(React.Component));

@@ -3,14 +3,88 @@
 @import 'fonts';
 
 $fonts: 'LatoWebMedium','Helvetica', sans-serif;
-
+$dark-grey: #323133;
+$light-grey: #F5F7FA;
 body{
 	font-family: $fonts;
-	background: #2c3e50;
+	background: $light-grey;
+	overflow-x: hidden;
+
 }
 .results-wrapper{
 	@include flexbox;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	background: #AAB2BD;
+	color: #323133;
+
+	& > .title{
+		@include flexbox;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+		font-size: 2rem;
+		padding-top: 2%;
+		padding-bottom: 2%;
+		background: $dark-grey;
+		color: $light-grey;
+		& > span{
+			margin: 0.5%;
+			font-family: 'LatoWebHairline', $fonts;
+		}
+		& > span:nth-child(1){
+			font-family: 'LatoWebLight', $fonts;
+			font-style: italic;
+			text-transform: uppercase;
+			letter-spacing: 4px;
+		}
+		& > span:nth-child(2){
+			font-family: 'LatoWebHeavy', $fonts;
+			color: #F71E35;
+			
+		}
+	}
+
+	& > .db-wrapper{
+		@include flexbox;
+		width: 100%;
+		flex-direction: column;
+		padding-top: 1.5%;
+		background: #F5F7FA;
+
+		// justify-content: center;
+		align-items: center;
+		& > span{
+			@include flexbox;
+			width: 90%;
+			margin-top: 1%;
+			margin-bottom: 1%;
+			background: #434A54;
+			padding: 2.5%;
+			color: #fff;
+			border-radius: 20px;
+			font-family: 'LatoWebThin', $fonts;
+			line-height: 4vh;
+			// border-radius: 1.5rem;
+		}
+	}
+}
+.main-title{
+	@include flexbox;
+	justify-content: center;
+	padding-top: 2.5%;
+	padding-bottom: 2.5%;
+	font-size: 3rem;
+	background: $dark-grey;
+	color: $light-grey;
+	& > span:nth-child(1){
+		font-family: 'LatoWebHairline', $fonts;
+		margin-right: 0.4%;
+		letter-spacing: 3px;
+	}
+	& > span:nth-child(2){
+		font-family: 'LatoWebHeavy', $fonts;
+		margin-left: 0.4%;
+	}
 }

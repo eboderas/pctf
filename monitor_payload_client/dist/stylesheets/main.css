@@ -211,7 +211,8 @@ table {
   text-rendering: optimizeLegibility; }
 body {
   font-family: "LatoWebMedium", "Helvetica", sans-serif;
-  background: #2c3e50; }
+  background: #F5F7FA;
+  overflow-x: hidden; }
 
 .results-wrapper {
   display: -webkit-box;
@@ -221,6 +222,79 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  background: #AAB2BD;
+  color: #323133; }
+  .results-wrapper > .title {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background: #323133;
+    color: #F5F7FA; }
+    .results-wrapper > .title > span {
+      margin: 0.5%;
+      font-family: "LatoWebHairline", "LatoWebMedium", "Helvetica", sans-serif; }
+    .results-wrapper > .title > span:nth-child(1) {
+      font-family: "LatoWebLight", "LatoWebMedium", "Helvetica", sans-serif;
+      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: 4px; }
+    .results-wrapper > .title > span:nth-child(2) {
+      font-family: "LatoWebHeavy", "LatoWebMedium", "Helvetica", sans-serif;
+      color: #F71E35; }
+  .results-wrapper > .db-wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding-top: 1.5%;
+    background: #F5F7FA;
+    align-items: center; }
+    .results-wrapper > .db-wrapper > span {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      width: 90%;
+      margin-top: 1%;
+      margin-bottom: 1%;
+      background: #434A54;
+      padding: 2.5%;
+      color: #fff;
+      border-radius: 20px;
+      font-family: "LatoWebThin", "LatoWebMedium", "Helvetica", sans-serif;
+      line-height: 4vh; }
+
+.main-title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  font-size: 3rem;
+  background: #323133;
+  color: #F5F7FA; }
+  .main-title > span:nth-child(1) {
+    font-family: "LatoWebHairline", "LatoWebMedium", "Helvetica", sans-serif;
+    margin-right: 0.4%;
+    letter-spacing: 3px; }
+  .main-title > span:nth-child(2) {
+    font-family: "LatoWebHeavy", "LatoWebMedium", "Helvetica", sans-serif;
+    margin-left: 0.4%; }
 
 /*# sourceMappingURL=main.css.map */
