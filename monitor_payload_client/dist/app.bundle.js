@@ -1325,33 +1325,33 @@ var App = (function (_super) {
         }).catch(function (error) {
             console.log('Request Error: ', error);
         });
+        return _this;
         /**
          * Fetching Payload data and rendering
          */
-        axios({
-            method: 'post',
-            url: 'https://pctf.herokuapp.com/main',
-            data: {
-                type: "initPayload"
-            }
-        }).then(function (response) {
-            // console.log( 'Response: ', response );
-            var dbResults = [["Payload Length", "Frequency"]];
-            response.data.db.forEach(function (row) {
-                dbResults.push([row.length.toString(), row.count]);
-            });
-            // console.log( 'DB Results: ', dbResults );
-            _this.setState({
-                type: "dst",
-                results: _this.state.results,
-                meta: _this.state.meta,
-                dataDST: _this.state.dataDST,
-                dataPayload: dbResults
-            });
-        }).catch(function (error) {
-            console.log('Request Error: ', error);
-        });
-        return _this;
+        // axios({
+        //     method: 'post',
+        //     url: 'https://pctf.herokuapp.com/main',
+        //     data: {
+        //         type: "initPayload"
+        //     }
+        // }).then( ( response: any ) => {
+        //     // console.log( 'Response: ', response );
+        //     const dbResults: Array<any> = [ ["Payload Length", "Frequency"] ];
+        //     response.data.db.forEach( ( row: any ) => {
+        //         dbResults.push([ row.length.toString(), row.count ]);
+        //     });
+        //     // console.log( 'DB Results: ', dbResults );
+        //     this.setState({
+        //         type: "dst",
+        //         results: this.state.results,
+        //         meta: this.state.meta,
+        //         dataDST: this.state.dataDST,
+        //         dataPayload: dbResults
+        //     });
+        // }).catch( ( error: any ) => {
+        //     console.log( 'Request Error: ', error );
+        // });
     }
     /**
      * Render React App
@@ -1360,8 +1360,8 @@ var App = (function (_super) {
      */
     App.prototype.render = function () {
         return (React.createElement("div", null,
-            React.createElement(DSTHistogram_1.DSTHistogram, { chartType: dstHistProps.chartType, data: this.state.dataDST, options: dstHistProps.options, width: dstHistProps.width, results: this.state.results, update: this.updateDST.bind(this) }),
-            React.createElement(PayloadHistogram_1.PayloadHistogram, { chartType: payloadHistProps.chartType, data: this.state.dataPayload, options: payloadHistProps.options, width: payloadHistProps.width, results: this.state.results, update: this.updatePayload.bind(this) }),
+            React.createElement(DSTHistogram_1.DSTHistogram, { chartType: dstHistProps.chartType, options: dstHistProps.options, width: dstHistProps.width, results: this.state.results, update: this.updateDST.bind(this) }),
+            React.createElement(PayloadHistogram_1.PayloadHistogram, { chartType: payloadHistProps.chartType, options: payloadHistProps.options, width: payloadHistProps.width, results: this.state.results, update: this.updatePayload.bind(this) }),
             React.createElement(Results_1.Results, { results: this.state.results, title: this.state.type, value: this.state.meta })));
     };
     App.prototype.updateDST = function (data) {
@@ -1470,10 +1470,17 @@ var axios = __webpack_require__(3);
 var DSTHistogram = (function (_super) {
     __extends(DSTHistogram, _super);
     function DSTHistogram(props) {
-        var _this = _super.call(this, props) || this;
-        /**
-         * Fetching the DST data here
-         */
+        return _super.call(this, props) || this;
+    }
+    DSTHistogram.prototype.render = function () {
+        if (this.state && this.state.data) {
+            return (React.createElement("div", { className: 'my-pretty-chart-container' },
+                React.createElement(react_google_charts_1.Chart, { chartType: this.props.chartType, data: this.state.data, options: this.props.options, graph_id: "dst-histogram", width: this.props.width, height: "400px", legend_toggle: true, chartEvents: this.state.eventHandler })));
+        }
+        return React.createElement("div", null, "Loading...");
+    };
+    DSTHistogram.prototype.componentDidMount = function () {
+        var self = this;
         axios({
             method: 'post',
             url: 'https://pctf.herokuapp.com/main',
@@ -1482,29 +1489,29 @@ var DSTHistogram = (function (_super) {
             }
         }).then(function (response) {
             var dbResults = [["Destination Port", "Frequency"]];
+            // console.log( 'Response: ', response );
             response.data.db.forEach(function (row) {
                 dbResults.push([row.dst_port.toString(), row.count]);
             });
-            _this.data = dbResults;
-            _this.chartEvents = [
+            self.data = dbResults;
+            self.chartEvents = [
                 {
                     eventName: 'select',
                     callback: function (Chart) {
                         var selectedItem = Chart.chart.getSelection()[0];
                         console.log('Selected ', selectedItem);
                         console.log('Data :', dbResults[selectedItem.row + 1]);
-                        props.update(dbResults[selectedItem.row + 1]);
+                        self.props.update(dbResults[selectedItem.row + 1]);
                     }
                 }
             ];
+            self.setState({
+                data: dbResults,
+                eventHandler: self.chartEvents
+            });
         }).catch(function (error) {
             console.log('Request Error: ', error);
         });
-        return _this;
-    }
-    DSTHistogram.prototype.render = function () {
-        return (React.createElement("div", { className: 'my-pretty-chart-container' },
-            React.createElement(react_google_charts_1.Chart, { chartType: this.props.chartType, data: this.props.data, options: this.props.options, graph_id: "dst-histogram", width: this.props.width, height: "400px", legend_toggle: true, chartEvents: this.chartEvents })));
     };
     return DSTHistogram;
 }(React.Component));
@@ -1531,14 +1538,27 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(1);
 var react_google_charts_1 = __webpack_require__(11);
 var axios = __webpack_require__(3);
+// http://stackoverflow.com/questions/27192621/reactjs-async-rendering-of-components
 var PayloadHistogram = (function (_super) {
     __extends(PayloadHistogram, _super);
     function PayloadHistogram(props) {
-        var _this = _super.call(this, props) || this;
-        /**
-         * Friggin chartEvents wont update
-         * Hence the hack
-         */
+        return _super.call(this, props) || this;
+    }
+    PayloadHistogram.prototype.render = function () {
+        if (this.state && this.state.data) {
+            return (React.createElement("div", { className: 'my-pretty-chart-container' },
+                React.createElement(react_google_charts_1.Chart, { chartType: this.props.chartType, data: this.state.data, options: this.props.options, graph_id: "payload-histogram", width: this.props.width, height: "400px", legend_toggle: true, chartEvents: this.state.eventHandler })));
+        }
+        return React.createElement("div", null, "Loading...");
+    };
+    /**
+     * 1) Make AJAX call and load data
+     * 2) In Promise use data to load state
+     * 3) State change loads new data and re-renders component
+     * @memberof PayloadHistogram
+     */
+    PayloadHistogram.prototype.componentDidMount = function () {
+        var self = this;
         axios({
             method: 'post',
             url: 'https://pctf.herokuapp.com/main',
@@ -1550,26 +1570,25 @@ var PayloadHistogram = (function (_super) {
             response.data.db.forEach(function (row) {
                 dbResults.push([row.length.toString(), row.count]);
             });
-            _this.data = dbResults;
-            _this.chartEvents = [
+            self.data = dbResults;
+            self.chartEvents = [
                 {
                     eventName: 'select',
                     callback: function (Chart) {
                         var selectedItem = Chart.chart.getSelection()[0];
                         console.log('Selected ', selectedItem);
                         console.log('Data :', dbResults[selectedItem.row + 1]);
-                        props.update(dbResults[selectedItem.row + 1]);
+                        self.props.update(dbResults[selectedItem.row + 1]);
                     }
                 }
             ];
+            self.setState({
+                data: dbResults,
+                eventHandler: self.chartEvents
+            });
         }).catch(function (error) {
             console.log('Request Error: ', error);
         });
-        return _this;
-    }
-    PayloadHistogram.prototype.render = function () {
-        return (React.createElement("div", { className: 'my-pretty-chart-container' },
-            React.createElement(react_google_charts_1.Chart, { chartType: this.props.chartType, data: this.props.data, options: this.props.options, graph_id: "payload-histogram", width: this.props.width, height: "400px", legend_toggle: true, chartEvents: this.chartEvents })));
     };
     return PayloadHistogram;
 }(React.Component));

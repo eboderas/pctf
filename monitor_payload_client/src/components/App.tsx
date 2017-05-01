@@ -150,37 +150,37 @@ export class App extends React.Component<undefined, undefined> {
         }).catch( ( error: any ) => {
             console.log( 'Request Error: ', error );
         });
-        
+
         /**
          * Fetching Payload data and rendering
          */
-        axios({
-            method: 'post',
-            url: 'https://pctf.herokuapp.com/main',
-            data: {
-                type: "initPayload"
-            }
-        }).then( ( response: any ) => {
-            // console.log( 'Response: ', response );
+        // axios({
+        //     method: 'post',
+        //     url: 'https://pctf.herokuapp.com/main',
+        //     data: {
+        //         type: "initPayload"
+        //     }
+        // }).then( ( response: any ) => {
+        //     // console.log( 'Response: ', response );
 
-            const dbResults: Array<any> = [ ["Payload Length", "Frequency"] ];
-            response.data.db.forEach( ( row: any ) => {
-                dbResults.push([ row.length.toString(), row.count ]);
-            });
+        //     const dbResults: Array<any> = [ ["Payload Length", "Frequency"] ];
+        //     response.data.db.forEach( ( row: any ) => {
+        //         dbResults.push([ row.length.toString(), row.count ]);
+        //     });
 
-            // console.log( 'DB Results: ', dbResults );
+        //     // console.log( 'DB Results: ', dbResults );
 
-            this.setState({
-                type: "dst",
-                results: this.state.results,
-                meta: this.state.meta,
-                dataDST: this.state.dataDST,
-                dataPayload: dbResults
-            });
+        //     this.setState({
+        //         type: "dst",
+        //         results: this.state.results,
+        //         meta: this.state.meta,
+        //         dataDST: this.state.dataDST,
+        //         dataPayload: dbResults
+        //     });
 
-        }).catch( ( error: any ) => {
-            console.log( 'Request Error: ', error );
-        });
+        // }).catch( ( error: any ) => {
+        //     console.log( 'Request Error: ', error );
+        // });
     }
     /**
      * Render React App
@@ -190,8 +190,10 @@ export class App extends React.Component<undefined, undefined> {
     render() {
         return(
             <div>
-                <DSTHistogram chartType={ dstHistProps.chartType } data={ this.state.dataDST } options={ dstHistProps.options } width={ dstHistProps.width } results={ this.state.results } update={ this.updateDST.bind( this ) } />
-                <PayloadHistogram chartType={ payloadHistProps.chartType } data={ this.state.dataPayload } options={ payloadHistProps.options } width={ payloadHistProps.width } results={ this.state.results } update={ this.updatePayload.bind( this ) } />
+                <DSTHistogram chartType={ dstHistProps.chartType } options={ dstHistProps.options } width={ dstHistProps.width } results={ this.state.results } update={ this.updateDST.bind( this ) } />
+                {/*<DSTHistogram chartType={ dstHistProps.chartType } data={ this.state.dataDST } options={ dstHistProps.options } width={ dstHistProps.width } results={ this.state.results } update={ this.updateDST.bind( this ) } />*/}
+                {/*<PayloadHistogram chartType={ payloadHistProps.chartType } data={ this.state.dataPayload } options={ payloadHistProps.options } width={ payloadHistProps.width } results={ this.state.results } update={ this.updatePayload.bind( this ) } />*/}
+                <PayloadHistogram chartType={ payloadHistProps.chartType } options={ payloadHistProps.options } width={ payloadHistProps.width } results={ this.state.results } update={ this.updatePayload.bind( this ) } />
                 <Results results={ this.state.results } title={ this.state.type } value={ this.state.meta } />
             </div> 
         );
