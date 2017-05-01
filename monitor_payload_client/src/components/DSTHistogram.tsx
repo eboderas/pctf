@@ -56,12 +56,14 @@ export class DSTHistogram extends React.Component <HistogramProps, undefined> {
                 type: "initDST"
             }
         }).then( ( response: any ) => {
-            const dbResults: Array<any> = [ [ "Frequency", "Destination Port" ] ];
+            const dbResults: Array<any> = [ [ "Destination Port", "Frequency" ] ];
 
             response.data.db.forEach( ( row: any ) => {
-                dbResults.push([ row.count, row.dst_port.toString() ]);
+                // dbResults.push([ row.dst_port.toString(), parseInt(row.count) ]);
+				dbResults.push([ row.dst_port, parseInt(row.count) ]);
             });
 			self.data = dbResults;
+			console.log( 'dbResults: ', dbResults );
 			self.chartEvents = [
 			{
 				eventName: 'select',
