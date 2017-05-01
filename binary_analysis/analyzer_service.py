@@ -14,11 +14,12 @@ def path_exploit():
 
 def binary_category():
 	return 0
+
 def containsVuln(addresses):
 	vulnLine = os.popen('objdump -d a.out | grep -oP "\d.*(strcpy)"').read()
 	vulnCalls = vulnLine.split("\n") 
 	onlystrcpy = list(filter(lambda x:"\t" in x, vulnCalls))
-	return onlystrcpy
+	return onlystr
 
 vuln_funs = filter(None,os.popen('objdump -d '+ sys.argv[1] +  ' | grep -oP "(strcpy|memcpy|scanf|printf)"').read().split('\n'))
 print vuln_funs
