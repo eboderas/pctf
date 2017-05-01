@@ -15,7 +15,7 @@ def path_exploit():
 def binary_category():
 	return 0
 def containsVuln(addresses):
-	vulnLine = os.popen('objdump -d a.out | grep -oP "\d.*(strcpy|printf)"').read()
+	vulnLine = os.popen('objdump -d a.out | grep -oP "\d.*(strcpy|printf|scanf)"').read()
 	vulnCalls = vulnLine.split("\n") 
 	vulninstrList = list(filter(lambda x:"\t" in x, vulnCalls))
 	vulnAddr = []
