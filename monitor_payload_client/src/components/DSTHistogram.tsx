@@ -1,6 +1,7 @@
 import * as React from "react";
 import { render } from 'react-dom';
 import { Chart } from 'react-google-charts';
+import * as axios from 'axios';
 
 export interface HistogramProps {
 	chartType: string;
@@ -17,21 +18,36 @@ export class DSTHistogram extends React.Component <HistogramProps, undefined> {
 	data: any;
 	constructor(props: any){
 		super(props);
-		// this.data = this.props.data;
-		this.chartEvents = [
-		{
-			eventName: 'select',
-			callback(Chart: any) {
-				// Returns Chart so you can access props and  the ChartWrapper object from chart.wrapper
-				let selectedItem = Chart.chart.getSelection()[0];
-				console.log( 'Selected ', selectedItem );
-				console.log( 'Data :', props.data[ selectedItem.row + 1 ] );
-				// console.log('Data :', this.data.getValue(selectedItem.row, selectedItem.column));
-				// props.results.push( props.data[ selectedItem.row + 1 ] );
-				// console.log(  )
-				props.update( props.data[ selectedItem.row + 1 ] );
-			},
-		}];
+		/**
+         * Fetching the DST data here
+         */
+        axios({
+            method: 'post',
+            url: 'https://pctf.herokuapp.com/main',
+            data: {
+                type: "initDST"
+            }
+        }).then( ( response: any ) => {
+
+            const dbResults: Array<any> = [ ["Destination Port", "Frequency"] ];
+            response.data.db.forEach( ( row: any ) => {
+                dbResults.push([ row.dst_port.toString(), row.count ]);
+            });
+			this.data = dbResults;
+			this.chartEvents = [
+			{
+				eventName: 'select',
+				callback(Chart: any) {
+					let selectedItem = Chart.chart.getSelection()[0];
+					console.log( 'Selected ', selectedItem );
+					console.log( 'Data :', dbResults[ selectedItem.row + 1 ] );
+					props.update( dbResults[ selectedItem.row + 1 ] );
+				}
+			}];
+
+        }).catch( ( error: any ) => {
+            console.log( 'Request Error: ', error );
+        });
 	}
 	render() {
 		return (

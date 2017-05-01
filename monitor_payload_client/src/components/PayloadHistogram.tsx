@@ -3,26 +3,44 @@ import { render } from 'react-dom';
 import { Chart } from 'react-google-charts';
 import { HistogramProps } from './DSTHistogram';
 
+import * as axios from 'axios';
+
 export class PayloadHistogram extends React.Component <HistogramProps, undefined> {
 	chartEvents: any;
 	data: any;
 	constructor(props: any){
 		super(props);
-		// this.data = this.props.data;
-		this.chartEvents = [
-		{
-			eventName: 'select',
-			callback(Chart: any) {
-				// Returns Chart so you can access props and  the ChartWrapper object from chart.wrapper
-				let selectedItem = Chart.chart.getSelection()[0];
-				console.log( 'Selected ', selectedItem );
-				console.log( 'Data :', props.data[ selectedItem.row + 1 ] );
-				// console.log('Data :', this.data.getValue(selectedItem.row, selectedItem.column));
-				// props.results.push( props.data[ selectedItem.row + 1 ] );
-				// console.log(  )
-				props.update( props.data[ selectedItem.row + 1 ] );
-			},
-		}];
+
+		/**
+         * Friggin chartEvents wont update
+		 * Hence the hack
+         */
+        axios({
+            method: 'post',
+            url: 'https://pctf.herokuapp.com/main',
+            data: {
+                type: "initPayload"
+            }
+        }).then( ( response: any ) => {
+            const dbResults: Array<any> = [ ["Payload Length", "Frequency"] ];
+            response.data.db.forEach( ( row: any ) => {
+                dbResults.push([ row.length.toString(), row.count ]);
+            });
+			this.data = dbResults;
+			this.chartEvents = [
+			{
+				eventName: 'select',
+				callback(Chart: any) {
+					let selectedItem = Chart.chart.getSelection()[0];
+					console.log( 'Selected ', selectedItem );
+					console.log( 'Data :', dbResults[ selectedItem.row + 1 ] );
+					props.update( dbResults[ selectedItem.row + 1 ] );
+				}
+			}];
+
+        }).catch( ( error: any ) => {
+            console.log( 'Request Error: ', error );
+        });
 	}
 	render() {
 		return (

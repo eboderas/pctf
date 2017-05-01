@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 16);
+/******/ 	return __webpack_require__(__webpack_require__.s = 17);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -73,7 +73,7 @@
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
-var bind = __webpack_require__(8);
+var bind = __webpack_require__(9);
 
 /*global toString:true*/
 
@@ -586,6 +586,12 @@ process.umask = function() { return 0; };
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(18);
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
@@ -606,10 +612,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(4);
+    adapter = __webpack_require__(5);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(4);
+    adapter = __webpack_require__(5);
   }
   return adapter;
 }
@@ -683,7 +689,7 @@ module.exports = defaults;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -694,7 +700,7 @@ var settle = __webpack_require__(24);
 var buildURL = __webpack_require__(27);
 var parseHeaders = __webpack_require__(33);
 var isURLSameOrigin = __webpack_require__(31);
-var createError = __webpack_require__(7);
+var createError = __webpack_require__(8);
 var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(26);
 
 module.exports = function xhrAdapter(config) {
@@ -870,7 +876,7 @@ module.exports = function xhrAdapter(config) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -896,7 +902,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -908,7 +914,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -932,7 +938,7 @@ module.exports = function createError(message, config, code, response) {
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -950,7 +956,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {/**
@@ -1142,7 +1148,7 @@ function localstorage() {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1160,7 +1166,7 @@ exports.default = { Chart: _Chart2.default };
 module.exports = exports['default'];
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1177,10 +1183,10 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(1);
-var DSTHistogram_1 = __webpack_require__(13);
-var PayloadHistogram_1 = __webpack_require__(14);
-var Results_1 = __webpack_require__(15);
-var axios = __webpack_require__(17);
+var DSTHistogram_1 = __webpack_require__(14);
+var PayloadHistogram_1 = __webpack_require__(15);
+var Results_1 = __webpack_require__(16);
+var axios = __webpack_require__(3);
 var dstHistProps = {
     chartType: "Histogram",
     data: [
@@ -1263,6 +1269,19 @@ var payloadHistProps = {
     },
     width: "100%"
 };
+var chartEventsUpdate = [{
+        eventName: 'select',
+        callback: function (Chart) {
+            // console.log( 'state', this.state );
+            var selectedItem = Chart.chart.getSelection()[0];
+            console.log('Selected ', selectedItem);
+            console.log('Data :', this.props.data[selectedItem.row + 1]);
+            // console.log('Data :', this.data.getValue(selectedItem.row, selectedItem.column));
+            // props.results.push( props.data[ selectedItem.row + 1 ] );
+            // console.log(  )
+            this.props.update(this.props.data[selectedItem.row + 1]);
+        }
+    }];
 var App = (function (_super) {
     __extends(App, _super);
     /**
@@ -1290,13 +1309,12 @@ var App = (function (_super) {
                 type: "initDST"
             }
         }).then(function (response) {
-            console.log('Response: ', response);
+            // console.log( 'Response: ', response );
             var dbResults = [["Destination Port", "Frequency"]];
             response.data.db.forEach(function (row) {
                 dbResults.push([row.dst_port.toString(), row.count]);
             });
-            console.log('DB Results: ', dbResults);
-            console.log('d: ', dstHistProps.data);
+            // console.log( 'DB Results: ', dbResults );
             _this.setState({
                 type: "dst",
                 results: _this.state.results,
@@ -1317,12 +1335,12 @@ var App = (function (_super) {
                 type: "initPayload"
             }
         }).then(function (response) {
-            console.log('Response: ', response);
+            // console.log( 'Response: ', response );
             var dbResults = [["Payload Length", "Frequency"]];
             response.data.db.forEach(function (row) {
                 dbResults.push([row.length.toString(), row.count]);
             });
-            console.log('DB Results: ', dbResults);
+            // console.log( 'DB Results: ', dbResults );
             _this.setState({
                 type: "dst",
                 results: _this.state.results,
@@ -1348,7 +1366,7 @@ var App = (function (_super) {
     };
     App.prototype.updateDST = function (data) {
         var _this = this;
-        console.log('Parent Data :', data);
+        // console.log( 'Parent Data :', data );
         // console.log( 'state :', {this.state} );
         this.setState({
             type: "dst",
@@ -1365,12 +1383,12 @@ var App = (function (_super) {
                 results: this.state.results
             }
         }).then(function (response) {
-            console.log('Response: ', response);
+            // console.log( 'Response: ', response );
             var dbResults = [];
             response.data.db.forEach(function (row) {
                 dbResults.push(row.payload);
             });
-            console.log('DB Results: ', dbResults);
+            // console.log( 'DB Results: ', dbResults );
             _this.setState({
                 type: "dst",
                 results: dbResults,
@@ -1384,7 +1402,7 @@ var App = (function (_super) {
     };
     App.prototype.updatePayload = function (data) {
         var _this = this;
-        console.log('Parent Data :', data);
+        // console.log( 'Parent Data :', data );
         // console.log( 'state :', {this.state} );
         this.setState({
             type: "payload",
@@ -1401,12 +1419,12 @@ var App = (function (_super) {
                 results: this.state.results
             }
         }).then(function (response) {
-            console.log('Response: ', response);
+            // console.log( 'Response: ', response );
             var dbResults = [];
             response.data.db.forEach(function (row) {
                 dbResults.push(row.payload);
             });
-            console.log('DB Results: ', dbResults);
+            // console.log( 'DB Results: ', dbResults );
             _this.setState({
                 type: "payload",
                 results: dbResults,
@@ -1424,60 +1442,10 @@ exports.App = App;
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports) {
 
 module.exports = ReactDOM;
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(1);
-var react_google_charts_1 = __webpack_require__(10);
-var DSTHistogram = (function (_super) {
-    __extends(DSTHistogram, _super);
-    function DSTHistogram(props) {
-        var _this = _super.call(this, props) || this;
-        // this.data = this.props.data;
-        _this.chartEvents = [
-            {
-                eventName: 'select',
-                callback: function (Chart) {
-                    // Returns Chart so you can access props and  the ChartWrapper object from chart.wrapper
-                    var selectedItem = Chart.chart.getSelection()[0];
-                    console.log('Selected ', selectedItem);
-                    console.log('Data :', props.data[selectedItem.row + 1]);
-                    // console.log('Data :', this.data.getValue(selectedItem.row, selectedItem.column));
-                    // props.results.push( props.data[ selectedItem.row + 1 ] );
-                    // console.log(  )
-                    props.update(props.data[selectedItem.row + 1]);
-                },
-            }
-        ];
-        return _this;
-    }
-    DSTHistogram.prototype.render = function () {
-        return (React.createElement("div", { className: 'my-pretty-chart-container' },
-            React.createElement(react_google_charts_1.Chart, { chartType: this.props.chartType, data: this.props.data, options: this.props.options, graph_id: "dst-histogram", width: this.props.width, height: "400px", legend_toggle: true, chartEvents: this.chartEvents })));
-    };
-    return DSTHistogram;
-}(React.Component));
-exports.DSTHistogram = DSTHistogram;
-
 
 /***/ }),
 /* 14 */
@@ -1497,27 +1465,106 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(1);
-var react_google_charts_1 = __webpack_require__(10);
+var react_google_charts_1 = __webpack_require__(11);
+var axios = __webpack_require__(3);
+var DSTHistogram = (function (_super) {
+    __extends(DSTHistogram, _super);
+    function DSTHistogram(props) {
+        var _this = _super.call(this, props) || this;
+        /**
+         * Fetching the DST data here
+         */
+        axios({
+            method: 'post',
+            url: 'https://pctf.herokuapp.com/main',
+            data: {
+                type: "initDST"
+            }
+        }).then(function (response) {
+            var dbResults = [["Destination Port", "Frequency"]];
+            response.data.db.forEach(function (row) {
+                dbResults.push([row.dst_port.toString(), row.count]);
+            });
+            _this.data = dbResults;
+            _this.chartEvents = [
+                {
+                    eventName: 'select',
+                    callback: function (Chart) {
+                        var selectedItem = Chart.chart.getSelection()[0];
+                        console.log('Selected ', selectedItem);
+                        console.log('Data :', dbResults[selectedItem.row + 1]);
+                        props.update(dbResults[selectedItem.row + 1]);
+                    }
+                }
+            ];
+        }).catch(function (error) {
+            console.log('Request Error: ', error);
+        });
+        return _this;
+    }
+    DSTHistogram.prototype.render = function () {
+        return (React.createElement("div", { className: 'my-pretty-chart-container' },
+            React.createElement(react_google_charts_1.Chart, { chartType: this.props.chartType, data: this.props.data, options: this.props.options, graph_id: "dst-histogram", width: this.props.width, height: "400px", legend_toggle: true, chartEvents: this.chartEvents })));
+    };
+    return DSTHistogram;
+}(React.Component));
+exports.DSTHistogram = DSTHistogram;
+
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(1);
+var react_google_charts_1 = __webpack_require__(11);
+var axios = __webpack_require__(3);
 var PayloadHistogram = (function (_super) {
     __extends(PayloadHistogram, _super);
     function PayloadHistogram(props) {
         var _this = _super.call(this, props) || this;
-        // this.data = this.props.data;
-        _this.chartEvents = [
-            {
-                eventName: 'select',
-                callback: function (Chart) {
-                    // Returns Chart so you can access props and  the ChartWrapper object from chart.wrapper
-                    var selectedItem = Chart.chart.getSelection()[0];
-                    console.log('Selected ', selectedItem);
-                    console.log('Data :', props.data[selectedItem.row + 1]);
-                    // console.log('Data :', this.data.getValue(selectedItem.row, selectedItem.column));
-                    // props.results.push( props.data[ selectedItem.row + 1 ] );
-                    // console.log(  )
-                    props.update(props.data[selectedItem.row + 1]);
-                },
+        /**
+         * Friggin chartEvents wont update
+         * Hence the hack
+         */
+        axios({
+            method: 'post',
+            url: 'https://pctf.herokuapp.com/main',
+            data: {
+                type: "initPayload"
             }
-        ];
+        }).then(function (response) {
+            var dbResults = [["Payload Length", "Frequency"]];
+            response.data.db.forEach(function (row) {
+                dbResults.push([row.length.toString(), row.count]);
+            });
+            _this.data = dbResults;
+            _this.chartEvents = [
+                {
+                    eventName: 'select',
+                    callback: function (Chart) {
+                        var selectedItem = Chart.chart.getSelection()[0];
+                        console.log('Selected ', selectedItem);
+                        console.log('Data :', dbResults[selectedItem.row + 1]);
+                        props.update(dbResults[selectedItem.row + 1]);
+                    }
+                }
+            ];
+        }).catch(function (error) {
+            console.log('Request Error: ', error);
+        });
         return _this;
     }
     PayloadHistogram.prototype.render = function () {
@@ -1530,7 +1577,7 @@ exports.PayloadHistogram = PayloadHistogram;
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1574,23 +1621,17 @@ exports.Results = Results;
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(1);
-var ReactDOM = __webpack_require__(12);
-var App_1 = __webpack_require__(11);
+var ReactDOM = __webpack_require__(13);
+var App_1 = __webpack_require__(12);
 ReactDOM.render(React.createElement(App_1.App, null), document.getElementById('app'));
 
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(18);
 
 /***/ }),
 /* 18 */
@@ -1600,9 +1641,9 @@ module.exports = __webpack_require__(18);
 
 
 var utils = __webpack_require__(0);
-var bind = __webpack_require__(8);
+var bind = __webpack_require__(9);
 var Axios = __webpack_require__(20);
-var defaults = __webpack_require__(3);
+var defaults = __webpack_require__(4);
 
 /**
  * Create an instance of Axios
@@ -1635,9 +1676,9 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(5);
+axios.Cancel = __webpack_require__(6);
 axios.CancelToken = __webpack_require__(19);
-axios.isCancel = __webpack_require__(6);
+axios.isCancel = __webpack_require__(7);
 
 // Expose all/spread
 axios.all = function all(promises) {
@@ -1658,7 +1699,7 @@ module.exports.default = axios;
 "use strict";
 
 
-var Cancel = __webpack_require__(5);
+var Cancel = __webpack_require__(6);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -1722,7 +1763,7 @@ module.exports = CancelToken;
 "use strict";
 
 
-var defaults = __webpack_require__(3);
+var defaults = __webpack_require__(4);
 var utils = __webpack_require__(0);
 var InterceptorManager = __webpack_require__(21);
 var dispatchRequest = __webpack_require__(22);
@@ -1875,8 +1916,8 @@ module.exports = InterceptorManager;
 
 var utils = __webpack_require__(0);
 var transformData = __webpack_require__(25);
-var isCancel = __webpack_require__(6);
-var defaults = __webpack_require__(3);
+var isCancel = __webpack_require__(7);
+var defaults = __webpack_require__(4);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -1985,7 +2026,7 @@ module.exports = function enhanceError(error, config, code, response) {
 "use strict";
 
 
-var createError = __webpack_require__(7);
+var createError = __webpack_require__(8);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -5109,7 +5150,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _debug = __webpack_require__(9);
+var _debug = __webpack_require__(10);
 
 var _debug2 = _interopRequireDefault(_debug);
 
@@ -5593,7 +5634,7 @@ module.exports = exports['default'];
 
 exports.__esModule = true;
 
-var _debug = __webpack_require__(9);
+var _debug = __webpack_require__(10);
 
 var _debug2 = _interopRequireDefault(_debug);
 
