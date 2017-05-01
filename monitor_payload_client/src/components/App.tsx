@@ -126,7 +126,8 @@ export class App extends React.Component<undefined, undefined> {
             results: [ 'Select Port or Payload Length to view data' ],
             meta: "",
             dataDST: dstHistProps.data,
-            dataPayload: payloadHistProps.data
+            dataPayload: payloadHistProps.data,
+            ports: []
         };
     }
     /**
@@ -142,7 +143,7 @@ export class App extends React.Component<undefined, undefined> {
                 {/*<DSTHistogram chartType={ dstHistProps.chartType } data={ this.state.dataDST } options={ dstHistProps.options } width={ dstHistProps.width } results={ this.state.results } update={ this.updateDST.bind( this ) } />*/}
                 {/*<PayloadHistogram chartType={ payloadHistProps.chartType } data={ this.state.dataPayload } options={ payloadHistProps.options } width={ payloadHistProps.width } results={ this.state.results } update={ this.updatePayload.bind( this ) } />*/}
                 <PayloadHistogram chartType={ payloadHistProps.chartType } options={ payloadHistProps.options } width={ payloadHistProps.width } results={ this.state.results } update={ this.updatePayload.bind( this ) } />
-                <Results results={ this.state.results } title={ this.state.type } value={ this.state.meta } />
+                <Results results={ this.state.results } title={ this.state.type } value={ this.state.meta }/>
             </div> 
         );
     }
@@ -169,10 +170,10 @@ export class App extends React.Component<undefined, undefined> {
                 results: this.state.results
             }
         }).then( ( response: any ) => {
-
+            console.log( 'Response from server: ', response );
             const dbResults: Array<any> = [];
             response.data.db.forEach( ( row: any ) => {
-                dbResults.push(row.payload);
+                dbResults.push([ row.payload, row.dst_port ]);
             });
 
             this.setState({
@@ -213,7 +214,7 @@ export class App extends React.Component<undefined, undefined> {
 
             const dbResults: Array<any> = [];
             response.data.db.forEach( ( row: any ) => {
-                dbResults.push(row.payload);
+                dbResults.push([ row.payload, row.dst_port ]);
             });
 
             this.setState({

@@ -24,7 +24,9 @@ export class Results extends React.Component<resultProp, resultProp> {
 				<div className="db-wrapper">
 				{
 					this.props.results.map( ( val: any, i: number ) => {
-						return <span key={i}>{val}</span>
+						return (
+							<span key={i}>DST Port: {val[1]}<br />{val[0]}</span>
+						)
 					})
 				}
 				</div>

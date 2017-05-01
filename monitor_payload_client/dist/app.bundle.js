@@ -1303,7 +1303,8 @@ var App = (function (_super) {
             results: ['Select Port or Payload Length to view data'],
             meta: "",
             dataDST: dstHistProps.data,
-            dataPayload: payloadHistProps.data
+            dataPayload: payloadHistProps.data,
+            ports: []
         };
         return _this;
     }
@@ -1344,9 +1345,10 @@ var App = (function (_super) {
                 results: this.state.results
             }
         }).then(function (response) {
+            console.log('Response from server: ', response);
             var dbResults = [];
             response.data.db.forEach(function (row) {
-                dbResults.push(row.payload);
+                dbResults.push([row.payload, row.dst_port]);
             });
             _this.setState({
                 type: "dst",
@@ -1384,7 +1386,7 @@ var App = (function (_super) {
         }).then(function (response) {
             var dbResults = [];
             response.data.db.forEach(function (row) {
-                dbResults.push(row.payload);
+                dbResults.push([row.payload, row.dst_port]);
             });
             _this.setState({
                 type: "payload",
@@ -1600,7 +1602,11 @@ var Results = (function (_super) {
                 React.createElement("span", null, this.props.title),
                 React.createElement("span", null, this.props.value)),
             React.createElement("div", { className: "db-wrapper" }, this.props.results.map(function (val, i) {
-                return React.createElement("span", { key: i }, val);
+                return (React.createElement("span", { key: i },
+                    "DST Port: ",
+                    val[1],
+                    React.createElement("br", null),
+                    val[0]));
             }))));
     };
     return Results;
