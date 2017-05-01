@@ -135,6 +135,12 @@ export class App extends React.Component<undefined, undefined> {
             </div> 
         );
     }
+    /**
+     * 1) Update Parent state with destination port
+     * 2) AJAX call to server and fetch results
+     * 3) Reload state and re-render affected components
+     * @param data : this will be recieved from the child
+     */
     updateDST( data: any ): void{
         this.setState({
             type: "dst",
@@ -170,6 +176,12 @@ export class App extends React.Component<undefined, undefined> {
             console.log( 'Request Error: ', error );
         } );
     }
+    /**
+     * 1) Update Parent state with payload
+     * 2) AJAX call to server and fetch results
+     * 3) Reload state and re-render affected components
+     * @param data : this will be recieved from the child
+     */
     updatePayload( data: any ): void{
         this.setState({
             type: "payload",
