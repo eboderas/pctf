@@ -39,6 +39,13 @@ export class DSTHistogram extends React.Component <HistogramProps, undefined> {
 		}
 		return <div>Loading...</div>;
 	}
+	/**
+	 * 1) Make AJAX call and load data
+	 * 2) In Promise use data to load state
+	 * 3) State change loads new data and re-renders component
+	 * 
+	 * @memberof DSTHistogram
+	 */
 	componentDidMount(){
 		const self = this;
         axios({
@@ -49,7 +56,6 @@ export class DSTHistogram extends React.Component <HistogramProps, undefined> {
             }
         }).then( ( response: any ) => {
             const dbResults: Array<any> = [ ["Destination Port", "Frequency"] ];
-			// console.log( 'Response: ', response );
 
             response.data.db.forEach( ( row: any ) => {
                 dbResults.push([ row.dst_port.toString(), row.count ]);
