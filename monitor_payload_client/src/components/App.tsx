@@ -6,7 +6,7 @@ import { Results } from "./Results"
 import axios = require( 'axios' );
 
 const dstHistProps: HistogramProps = {
-    chartType: "Histogram",
+    chartType: "ScatterChart",
     data: [
     ["Destination Port", "Frequency"],
     ["22510", 40],
@@ -44,13 +44,16 @@ const dstHistProps: HistogramProps = {
             // maxNumBuckets: 20
             bucketSize: 1
         },
-        colors: ['#BF263C']
+        colors: ['#BF263C'],
+        "bar": {
+			"groupWidth": "15%"
+		}
     },
     width: "100%"
 }
 
 const payloadHistProps: HistogramProps = {
-    chartType: "Histogram",
+    chartType: "ScatterChart",
     data: [
     ["Payload Length", "Frequency"],
     ["249", 8],
@@ -88,7 +91,10 @@ const payloadHistProps: HistogramProps = {
             // maxNumBuckets: 40
             bucketSize: 1
         },
-        colors: ['#BF263C']
+        colors: ['#BF263C'],
+        "bar": {
+			"groupWidth": "100%"
+		}
     },
     width: "100%"
  }
@@ -149,8 +155,8 @@ export class App extends React.Component<undefined, undefined> {
     updateDST( data: any ): void{
         this.setState({
             type: "dst",
-            results: [ data[1] ],
-            meta: data[1],
+            results: [ data[0] ],
+            meta: data[0],
             dataDST: this.state.dataDST,
             dataPayload: this.state.dataPayload
         });
@@ -190,8 +196,8 @@ export class App extends React.Component<undefined, undefined> {
     updatePayload( data: any ): void{
         this.setState({
             type: "payload",
-            results: [ data[1] ],
-            meta: data[1],
+            results: [ data[0] ],
+            meta: data[0],
             dataDST: this.state.dataDST,
             dataPayload: this.state.dataPayload
         });

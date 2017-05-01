@@ -1188,7 +1188,7 @@ var PayloadHistogram_1 = __webpack_require__(15);
 var Results_1 = __webpack_require__(16);
 var axios = __webpack_require__(3);
 var dstHistProps = {
-    chartType: "Histogram",
+    chartType: "ScatterChart",
     data: [
         ["Destination Port", "Frequency"],
         ["22510", 40],
@@ -1226,12 +1226,15 @@ var dstHistProps = {
             // maxNumBuckets: 20
             bucketSize: 1
         },
-        colors: ['#BF263C']
+        colors: ['#BF263C'],
+        "bar": {
+            "groupWidth": "15%"
+        }
     },
     width: "100%"
 };
 var payloadHistProps = {
-    chartType: "Histogram",
+    chartType: "ScatterChart",
     data: [
         ["Payload Length", "Frequency"],
         ["249", 8],
@@ -1269,7 +1272,10 @@ var payloadHistProps = {
             // maxNumBuckets: 40
             bucketSize: 1
         },
-        colors: ['#BF263C']
+        colors: ['#BF263C'],
+        "bar": {
+            "groupWidth": "100%"
+        }
     },
     width: "100%"
 };
@@ -1325,8 +1331,8 @@ var App = (function (_super) {
         var _this = this;
         this.setState({
             type: "dst",
-            results: [data[1]],
-            meta: data[1],
+            results: [data[0]],
+            meta: data[0],
             dataDST: this.state.dataDST,
             dataPayload: this.state.dataPayload
         });
@@ -1363,8 +1369,8 @@ var App = (function (_super) {
         var _this = this;
         this.setState({
             type: "payload",
-            results: [data[1]],
-            meta: data[1],
+            results: [data[0]],
+            meta: data[0],
             dataDST: this.state.dataDST,
             dataPayload: this.state.dataPayload
         });
@@ -1450,11 +1456,13 @@ var DSTHistogram = (function (_super) {
                 type: "initDST"
             }
         }).then(function (response) {
-            var dbResults = [["Frequency", "Destination Port"]];
+            var dbResults = [["Destination Port", "Frequency"]];
             response.data.db.forEach(function (row) {
-                dbResults.push([row.count, row.dst_port.toString()]);
+                // dbResults.push([ row.dst_port.toString(), parseInt(row.count) ]);
+                dbResults.push([row.dst_port, parseInt(row.count)]);
             });
             self.data = dbResults;
+            console.log('dbResults: ', dbResults);
             self.chartEvents = [
                 {
                     eventName: 'select',
@@ -1527,9 +1535,9 @@ var PayloadHistogram = (function (_super) {
                 type: "initPayload"
             }
         }).then(function (response) {
-            var dbResults = [["Frequency", "Payload Length"]];
+            var dbResults = [["Payload Length", "Frequency"]];
             response.data.db.forEach(function (row) {
-                dbResults.push([row.count, row.length.toString()]);
+                dbResults.push([row.length, parseInt(row.count)]);
             });
             self.data = dbResults;
             self.chartEvents = [
