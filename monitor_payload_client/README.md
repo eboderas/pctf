@@ -26,6 +26,7 @@ npm run build:windows
 
 # Run
 Note: Please run the server first then launch the client
+> Server running at https://pctf.herokuapp.com/
 ```
 Open Index.html in supported browser
 ```

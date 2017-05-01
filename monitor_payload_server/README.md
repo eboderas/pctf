@@ -25,6 +25,7 @@ npm run test:windows
 
 # Run
 Note: Please run the server first then launch the client
+> Server running at https://pctf.herokuapp.com/
 ```
 npm start
 ```
