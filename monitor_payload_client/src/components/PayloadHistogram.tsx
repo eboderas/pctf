@@ -47,9 +47,9 @@ export class PayloadHistogram extends React.Component <HistogramProps, undefined
                 type: "initPayload"
             }
         }).then( ( response: any ) => {
-            const dbResults: Array<any> = [ ["Payload Length", "Frequency"] ];
+            const dbResults: Array<any> = [ [ "Payload Length", "Frequency" ] ];
             response.data.db.forEach( ( row: any ) => {
-                dbResults.push([ row.length.toString(), row.count ]);
+                dbResults.push([ row.length, parseInt( row.count ) ]);
             });
 			self.data = dbResults;
 			self.chartEvents = [

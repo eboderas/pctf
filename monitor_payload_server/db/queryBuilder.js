@@ -1,29 +1,21 @@
 //sample query builder
 const queryBuilder = ( filters ) => {
-	return `select countryname, ${getColumn( filters.filter )}, countrycode, ${getColumn( filters.filter )}_color as color from pivot_indicators where year = ${filters.year} order by ${getColumn( filters.filter )}`;
+	if( filters.type === 'dst' ){
+		return `SELECT src_port, dst_port, "timestamp", payload, id, length
+	FROM public.payloads where dst_port=${ filters.results[0] } order by id desc limit 100;`;
+	}
+	else if( filters.type === 'payload' ){
+		return `SELECT src_port, dst_port, "timestamp", payload, id, length
+	FROM public.payloads where length=${ filters.results[0] } order by id desc limit 100;`;
+	}
+	else if( filters.type === 'initDST' ){
+		return `SELECT A.dst_port, count(*)
+	FROM (select * from public.payloads order by id desc limit 200) as A group by A.dst_port ;`;
+	}
+	else{
+		return `SELECT A.length, count(*)
+	FROM (select * from public.payloads order by id desc limit 200) as A group by A.length ;`;
+	}
 };
-
-const getColumn = ( field ) => {
-	switch( field ){
-		case 'GDP':
-			return 'gdp_us';
-		case 'FSI':
-			return 'fsi';
-		case 'INF':
-			return 'inflation';
-		case 'POP':
-			return 'populationgrowth';
-		case 'EMP':
-			return 'employmentratio';
-		case 'RES':
-			return 'reserves';
-		case 'FDI':
-			return 'fdi';
-		case 'TRA':
-			return 'trade';
-		default:
-			return 'fsi';
-	};
-}
 
 module.exports = queryBuilder;

@@ -6,7 +6,7 @@ import { Results } from "./Results"
 import axios = require( 'axios' );
 
 const dstHistProps: HistogramProps = {
-    chartType: "Histogram",
+    chartType: "ScatterChart",
     data: [
     ["Destination Port", "Frequency"],
     ["22510", 40],
@@ -41,14 +41,19 @@ const dstHistProps: HistogramProps = {
     options:{
         "title": "Frequency of ports used",
         "histogram": {
-            maxNumBuckets: 20
-        }
+            // maxNumBuckets: 20
+            bucketSize: 1
+        },
+        colors: ['#BF263C'],
+        "bar": {
+			"groupWidth": "15%"
+		}
     },
     width: "100%"
 }
 
 const payloadHistProps: HistogramProps = {
-    chartType: "Histogram",
+    chartType: "ScatterChart",
     data: [
     ["Payload Length", "Frequency"],
     ["249", 8],
@@ -83,8 +88,13 @@ const payloadHistProps: HistogramProps = {
     options:{
         "title": "Frequency of Payload Length",
         "histogram": {
-            maxNumBuckets: 40
-        }
+            // maxNumBuckets: 40
+            bucketSize: 1
+        },
+        colors: ['#BF263C'],
+        "bar": {
+			"groupWidth": "100%"
+		}
     },
     width: "100%"
  }
@@ -116,7 +126,8 @@ export class App extends React.Component<undefined, undefined> {
             results: [ 'Select Port or Payload Length to view data' ],
             meta: "",
             dataDST: dstHistProps.data,
-            dataPayload: payloadHistProps.data
+            dataPayload: payloadHistProps.data,
+            ports: []
         };
     }
     /**
@@ -127,11 +138,12 @@ export class App extends React.Component<undefined, undefined> {
     render() {
         return(
             <div>
+                <div className="main-title"><span>Monitor</span><span>Payload</span></div>
                 <DSTHistogram chartType={ dstHistProps.chartType } options={ dstHistProps.options } width={ dstHistProps.width } results={ this.state.results } update={ this.updateDST.bind( this ) } />
                 {/*<DSTHistogram chartType={ dstHistProps.chartType } data={ this.state.dataDST } options={ dstHistProps.options } width={ dstHistProps.width } results={ this.state.results } update={ this.updateDST.bind( this ) } />*/}
                 {/*<PayloadHistogram chartType={ payloadHistProps.chartType } data={ this.state.dataPayload } options={ payloadHistProps.options } width={ payloadHistProps.width } results={ this.state.results } update={ this.updatePayload.bind( this ) } />*/}
                 <PayloadHistogram chartType={ payloadHistProps.chartType } options={ payloadHistProps.options } width={ payloadHistProps.width } results={ this.state.results } update={ this.updatePayload.bind( this ) } />
-                <Results results={ this.state.results } title={ this.state.type } value={ this.state.meta } />
+                <Results results={ this.state.results } title={ this.state.type } value={ this.state.meta }/>
             </div> 
         );
     }
@@ -158,10 +170,10 @@ export class App extends React.Component<undefined, undefined> {
                 results: this.state.results
             }
         }).then( ( response: any ) => {
-
+            console.log( 'Response from server: ', response );
             const dbResults: Array<any> = [];
             response.data.db.forEach( ( row: any ) => {
-                dbResults.push(row.payload);
+                dbResults.push([ row.payload, row.dst_port ]);
             });
 
             this.setState({
@@ -190,7 +202,7 @@ export class App extends React.Component<undefined, undefined> {
             dataDST: this.state.dataDST,
             dataPayload: this.state.dataPayload
         });
-
+        
         axios({
             method: 'post',
             url: 'https://pctf.herokuapp.com/payload',
@@ -202,7 +214,7 @@ export class App extends React.Component<undefined, undefined> {
 
             const dbResults: Array<any> = [];
             response.data.db.forEach( ( row: any ) => {
-                dbResults.push(row.payload);
+                dbResults.push([ row.payload, row.dst_port ]);
             });
 
             this.setState({

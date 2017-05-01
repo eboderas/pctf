@@ -1188,7 +1188,7 @@ var PayloadHistogram_1 = __webpack_require__(15);
 var Results_1 = __webpack_require__(16);
 var axios = __webpack_require__(3);
 var dstHistProps = {
-    chartType: "Histogram",
+    chartType: "ScatterChart",
     data: [
         ["Destination Port", "Frequency"],
         ["22510", 40],
@@ -1223,13 +1223,18 @@ var dstHistProps = {
     options: {
         "title": "Frequency of ports used",
         "histogram": {
-            maxNumBuckets: 20
+            // maxNumBuckets: 20
+            bucketSize: 1
+        },
+        colors: ['#BF263C'],
+        "bar": {
+            "groupWidth": "15%"
         }
     },
     width: "100%"
 };
 var payloadHistProps = {
-    chartType: "Histogram",
+    chartType: "ScatterChart",
     data: [
         ["Payload Length", "Frequency"],
         ["249", 8],
@@ -1264,7 +1269,12 @@ var payloadHistProps = {
     options: {
         "title": "Frequency of Payload Length",
         "histogram": {
-            maxNumBuckets: 40
+            // maxNumBuckets: 40
+            bucketSize: 1
+        },
+        colors: ['#BF263C'],
+        "bar": {
+            "groupWidth": "100%"
         }
     },
     width: "100%"
@@ -1293,7 +1303,8 @@ var App = (function (_super) {
             results: ['Select Port or Payload Length to view data'],
             meta: "",
             dataDST: dstHistProps.data,
-            dataPayload: payloadHistProps.data
+            dataPayload: payloadHistProps.data,
+            ports: []
         };
         return _this;
     }
@@ -1304,10 +1315,19 @@ var App = (function (_super) {
      */
     App.prototype.render = function () {
         return (React.createElement("div", null,
+            React.createElement("div", { className: "main-title" },
+                React.createElement("span", null, "Monitor"),
+                React.createElement("span", null, "Payload")),
             React.createElement(DSTHistogram_1.DSTHistogram, { chartType: dstHistProps.chartType, options: dstHistProps.options, width: dstHistProps.width, results: this.state.results, update: this.updateDST.bind(this) }),
             React.createElement(PayloadHistogram_1.PayloadHistogram, { chartType: payloadHistProps.chartType, options: payloadHistProps.options, width: payloadHistProps.width, results: this.state.results, update: this.updatePayload.bind(this) }),
             React.createElement(Results_1.Results, { results: this.state.results, title: this.state.type, value: this.state.meta })));
     };
+    /**
+     * 1) Update Parent state with destination port
+     * 2) AJAX call to server and fetch results
+     * 3) Reload state and re-render affected components
+     * @param data : this will be recieved from the child
+     */
     App.prototype.updateDST = function (data) {
         var _this = this;
         this.setState({
@@ -1325,9 +1345,10 @@ var App = (function (_super) {
                 results: this.state.results
             }
         }).then(function (response) {
+            console.log('Response from server: ', response);
             var dbResults = [];
             response.data.db.forEach(function (row) {
-                dbResults.push(row.payload);
+                dbResults.push([row.payload, row.dst_port]);
             });
             _this.setState({
                 type: "dst",
@@ -1340,6 +1361,12 @@ var App = (function (_super) {
             console.log('Request Error: ', error);
         });
     };
+    /**
+     * 1) Update Parent state with payload
+     * 2) AJAX call to server and fetch results
+     * 3) Reload state and re-render affected components
+     * @param data : this will be recieved from the child
+     */
     App.prototype.updatePayload = function (data) {
         var _this = this;
         this.setState({
@@ -1359,7 +1386,7 @@ var App = (function (_super) {
         }).then(function (response) {
             var dbResults = [];
             response.data.db.forEach(function (row) {
-                dbResults.push(row.payload);
+                dbResults.push([row.payload, row.dst_port]);
             });
             _this.setState({
                 type: "payload",
@@ -1415,6 +1442,13 @@ var DSTHistogram = (function (_super) {
         }
         return React.createElement("div", null, "Loading...");
     };
+    /**
+     * 1) Make AJAX call and load data
+     * 2) In Promise use data to load state
+     * 3) State change loads new data and re-renders component
+     *
+     * @memberof DSTHistogram
+     */
     DSTHistogram.prototype.componentDidMount = function () {
         var self = this;
         axios({
@@ -1425,11 +1459,12 @@ var DSTHistogram = (function (_super) {
             }
         }).then(function (response) {
             var dbResults = [["Destination Port", "Frequency"]];
-            // console.log( 'Response: ', response );
             response.data.db.forEach(function (row) {
-                dbResults.push([row.dst_port.toString(), row.count]);
+                // dbResults.push([ row.dst_port.toString(), parseInt(row.count) ]);
+                dbResults.push([row.dst_port, parseInt(row.count)]);
             });
             self.data = dbResults;
+            console.log('dbResults: ', dbResults);
             self.chartEvents = [
                 {
                     eventName: 'select',
@@ -1504,7 +1539,7 @@ var PayloadHistogram = (function (_super) {
         }).then(function (response) {
             var dbResults = [["Payload Length", "Frequency"]];
             response.data.db.forEach(function (row) {
-                dbResults.push([row.length.toString(), row.count]);
+                dbResults.push([row.length, parseInt(row.count)]);
             });
             self.data = dbResults;
             self.chartEvents = [
@@ -1566,9 +1601,13 @@ var Results = (function (_super) {
             React.createElement("div", { className: "title" },
                 React.createElement("span", null, this.props.title),
                 React.createElement("span", null, this.props.value)),
-            this.props.results.map(function (val, i) {
-                return React.createElement("span", { key: i }, val);
-            })));
+            React.createElement("div", { className: "db-wrapper" }, this.props.results.map(function (val, i) {
+                return (React.createElement("span", { key: i },
+                    "DST Port: ",
+                    val[1],
+                    React.createElement("br", null),
+                    val[0]));
+            }))));
     };
     return Results;
 }(React.Component));
