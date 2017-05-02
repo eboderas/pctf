@@ -69,17 +69,20 @@ def getRaw(file):
             lengthPay = listNewLine[-2] - listNewLine[4]
 
             # prepare query
-            query = "INSERT INTO payloads(src_port, dst_port, timestamp, payload,length) " \
-                    "VALUES (%d,%d,'%s','%s',%d);" % (src, dst, time, payload, lengthPay)
+            query = "INSERT INTO payloads(src_port, dst_port, length, timestamp, payload) " \
+                    "VALUES (%d,%d,%d" % (src, dst, lengthPay)
+            query +=",%s,%s);"
 
-            if dst != 0:
-                # only insert query if the dst is NOT 0, which means off by one error
-                postgres.execute(query)
+            if not "github.com" in payload:
+                if dst != 0:
+                    # only insert query if the dst is NOT 0, which means off by one error
+                    postgres.execute(query, (time, payload))
 
             with open(outFile, 'a') as fd:
                 fd.write(raw)
 
-        except ValueError:
+        except ValueError as e:
+            print e
             return ""
 
     print "Look for %s file" % outFile
@@ -90,10 +93,11 @@ def getConversations(file):
     pcap = rdpcap(file)
 
     for pkt in pcap:
-        if pkt[TCP].sport in portArr or pkt[TCP].dport in portArr:
-            # use sport, because this conversation started from this port
-            # use dport, because our server returned the flag
-            wrpcap(file + ".filtered", pkt, append=True)
+        if TCP in pkt:
+            if pkt[TCP].sport in portArr or pkt[TCP].dport in portArr:
+                # use sport, because this conversation started from this port
+                # use dport, because our server returned the flag
+                wrpcap(file + ".filtered", pkt, append=True)
 
     print "Look for %s.filtered file" % file
 
@@ -109,16 +113,16 @@ def getPorts(source, file):
         if DEBUG:
             total += 1
             print "[DEBUG] \n" + str(pkt.summary)
-
-        if pkt[IP].src == source and Raw in pkt:
-            # look for any flags leaving our source ip and make sure the packet has RAW layer
-            if DEBUG:
-                print "[DEBUG IP] \n" + str(pkt.summary)
-            if any(flag in pkt[Raw].load for flag in flagsArr):
+        if IP in pkt:
+            if pkt[IP].src == source and Raw in pkt:
+                # look for any flags leaving our source ip and make sure the packet has RAW layer
                 if DEBUG:
-                    print "[DEBUG RAW] \t" + str(pkt.summary)
-                countFlag += 1
-                portArr.append(pkt[TCP].dport)
+                    print "[DEBUG IP] \n" + str(pkt.summary)
+                if any(flag in pkt[Raw].load for flag in flagsArr):
+                    if DEBUG:
+                        print "[DEBUG RAW] \t" + str(pkt.summary)
+                    countFlag += 1
+                    portArr.append(pkt[TCP].dport)
 
     if DEBUG:
         print "%d total packets" % total
