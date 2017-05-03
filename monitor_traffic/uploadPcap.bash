@@ -31,7 +31,7 @@ while true; do
 			# increment i and j to move onto next pcap file
 			i=$[$i+1]
 			j=$[$j+1]
-			
+
 		fi
 	fi
 done

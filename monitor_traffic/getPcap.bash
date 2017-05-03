@@ -17,7 +17,7 @@ fi
 # A POSIX variable
 OPTIND=1         # Reset in case getopts has been used previously in the shell.
 port=""
-i="0"
+i="11"
 
 function show_help {
 echo "Usage: bash ${0##*/} [-h] -p <port>"
@@ -46,9 +46,9 @@ fi
 # write to temp[num].pcap
 #   write to numbered files just in case we forget to scp the pcap and overwrite the previous
 while true; do
-tcpdump port not $port -w temp$i.pcap &
+tcpdump port not $port and port not ssh and port not 443 -w temp$i.pcap &
 pid=$!
-sleep 20
+sleep 300
 kill $pid
 echo "Killed tcpdump"
 i=$[$i+1]

@@ -32,21 +32,16 @@ if [[ -z  $src_ip  ]]; then
 	show_help
 fi
 
+mkdir finished
 
 while true; do
-
-	# http://stackoverflow.com/questions/3258243/check-if-pull-needed-in-git
-	# essentially checks if there needs to be a pull (meaning that a new pcap file was pushed)
 	if [ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref @{u} | \sed 's/\// /g') | cut -f1) ]; then
-		
 		echo up to date
-
 	else
-		
 		echo not up to date
 		git pull
 		python readPcap.py -s $src_ip -p temp$i.pcap
 		i=$[$i+1]
-
+		cp temp$i.pcap finished
 	fi
 done
